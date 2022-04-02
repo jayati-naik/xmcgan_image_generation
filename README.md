@@ -8,8 +8,8 @@ This repository hosts the open source [JAX](https://github.com/google/jax) imple
 ### Environment
 Set up virtualenv, and install required libraries:
 ```
-virtualenv venv
-source venv/bin/activate
+python -m venv venv_tmage
+source venv_tmage/bin/activate
 ```
 
 Add the XMC-GAN library to PYTHONPATH:
