@@ -29,7 +29,25 @@ pip install -r requirements.txt
 ### Preprocess COCO-2014
 To create the training and eval data, first start a directory. By default, the training scripts expect to save results in `data/` in the base directory.
 ```
-mkdir data/
+mkdir -p data/
+```
+
+Download the BERT model architecture
+```
+mkdir ../BERT_MODEL
+cd ../BERT_MODEL
+
+# download the model file using the 'wget' program
+wget "https://tfhub.dev/tensorflow/bert_en_uncased_L-12_H-768_A-12/2?tf-hub-format=compressed"
+
+# rename the downloaded file name to 'tar_file.tar.gz'
+mv 2\?tf-hub-format\=compressed tar_file.tar.gz
+
+# extract tar_file.tar.gz to the local directory 
+tar -zxvf tar_file.tar.gz
+
+# remove the tar file
+rm tar_file.tar.gz
 ```
 
 The TFRecords required for training and validation on COCO-2014 can be created by running a preprocessing script over the [TFDS coco_captions dataset](https://www.tensorflow.org/datasets/catalog/coco_captions):
@@ -69,8 +87,8 @@ If you would like to pretrain your own network on ImageNet, please refer to the 
 Start a training run, by first editing `train.sh` to specify an appropriate work directory. By default, the script assumes that 8 GPUs are available, and runs training on the first 7 GPUs, while `test.sh` assumes testing will run on the last GPU.
 After configuring the training job, start an experiment by running it on bash:
 ```
-mkdir exp
-bash train.sh exp_name &> train.txt
+mkdir ../experiments
+bash train.sh exp_name &> exp_name.log
 ```
 
 Checkpoints and Tensorboard logs will be saved in `/path/to/exp/exp_name`. By default, the configs/coco_xmc.py config is used, which runs an experiment for 128px images. This is able to accommodate a batch size of 8 on each GPU, and achieves an FID of around 10.5 - 11.0 with the EMA weights. To reproduce the full results on 256px images in our paper, the full model needs to be run using a 32-core Pod slice of [Google Cloud TPU v3](https://cloud.google.com/tpu) devices.
