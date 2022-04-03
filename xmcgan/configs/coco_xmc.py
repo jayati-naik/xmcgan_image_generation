@@ -20,12 +20,12 @@ def get_config():
     config = ml_collections.ConfigDict()
     config.seed = 42
 
-    config.eval_num = 30000
+    config.eval_num = 3000
     config.eval_avg_num = 3
     config.num_train_steps = -1
-    config.log_loss_every_steps = 1000
-    config.eval_every_steps = 1000
-    config.checkpoint_every_steps = 5000
+    config.log_loss_every_steps = 100
+    config.eval_every_steps = 100
+    config.checkpoint_every_steps = 500
 
     config.dataset = "mscoco"
     config.coco_version = "2014"
