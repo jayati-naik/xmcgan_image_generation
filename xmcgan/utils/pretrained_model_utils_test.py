@@ -23,18 +23,18 @@ FLAGS = flags.FLAGS
 
 
 class PretrainedModelUtilsTest(tf.test.TestCase, parameterized.TestCase):
-  """Tests on pretrained model functionality."""
+    """Tests on pretrained model functionality."""
 
-  @parameterized.parameters((1, 256, "resnet50"), (2, 128, "resnet50"))
-  def test_pretrained_model(self, batch_size, image_size, model_name):
-    model, state = pretrained_model_utils.get_pretrained_model(
-        model_name, checkpoint_path=None)
-    images = np.random.uniform(0, 1, (batch_size, image_size, image_size, 3))
-    pool, outputs = pretrained_model_utils.get_pretrained_embs(
-        state, model, images=images)
-    self.assertAllEqual(pool.shape, (batch_size, 7, 7, 2048))
-    self.assertAllEqual(outputs.shape, (batch_size, 1000))
+    @parameterized.parameters((1, 256, "resnet50"), (2, 128, "resnet50"))
+    def test_pretrained_model(self, batch_size, image_size, model_name):
+        model, state = pretrained_model_utils.get_pretrained_model(
+            model_name, checkpoint_path=None)
+        images = np.random.uniform(0, 1, (batch_size, image_size, image_size, 3))
+        pool, outputs = pretrained_model_utils.get_pretrained_embs(
+            state, model, images=images)
+        self.assertAllEqual(pool.shape, (batch_size, 7, 7, 2048))
+        self.assertAllEqual(outputs.shape, (batch_size, 1000))
 
 
 if __name__ == "__main__":
-  tf.test.main()
+    tf.test.main()

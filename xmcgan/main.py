@@ -21,50 +21,49 @@ import jax
 from ml_collections import config_flags
 import tensorflow as tf
 
-
 from xmcgan import train_utils
 
-
 FLAGS = flags.FLAGS
-
 
 config_flags.DEFINE_config_file(
     "config", None, "Training configuration.", lock_config=True)
 flags.DEFINE_string("workdir", None, "Work unit directory.")
 flags.mark_flags_as_required(["config", "workdir"])
 flags.DEFINE_enum("mode", "train", ["train", "test"], "job status")
+
+
 # Flags --jax_backend_target and --jax_xla_backend are available through JAX.
 
 
 def main(argv):
-  del argv
+    del argv
 
-  # Hide any GPUs form TensorFlow. Otherwise TF might reserve memory and make
-  # it unavailable to JAX.
-  tf.config.experimental.set_visible_devices([], "GPU")
+    # Hide any GPUs form TensorFlow. Otherwise TF might reserve memory and make
+    # it unavailable to JAX.
+    tf.config.experimental.set_visible_devices([], "GPU")
 
-  if FLAGS.jax_backend_target:
-    logging.info("Using JAX backend target %s", FLAGS.jax_backend_target)
-    jax_xla_backend = ("None" if FLAGS.jax_xla_backend is None else
-                       FLAGS.jax_xla_backend)
-    logging.info("Using JAX XLA backend %s", jax_xla_backend)
+    if FLAGS.jax_backend_target:
+        logging.info("Using JAX backend target %s", FLAGS.jax_backend_target)
+        jax_xla_backend = ("None" if FLAGS.jax_xla_backend is None else
+                           FLAGS.jax_xla_backend)
+        logging.info("Using JAX XLA backend %s", jax_xla_backend)
 
-  logging.info("JAX host: %d / %d", jax.host_id(), jax.host_count())
-  logging.info("JAX devices: %r", jax.devices())
+    logging.info("JAX host: %d / %d", jax.host_id(), jax.host_count())
+    logging.info("JAX devices: %r", jax.devices())
 
-  # Add a note so that we can tell which Borg task is which JAX host.
-  # (Borg task 0 is not guaranteed to be host 0)
-  platform.work_unit().set_task_status(
-      f"host_id: {jax.host_id()}, host_count: {jax.host_count()}")
-  platform.work_unit().create_artifact(platform.ArtifactType.DIRECTORY,
-                                       FLAGS.workdir, "workdir")
-  if FLAGS.mode == "train":
-    train_utils.train(FLAGS.config, FLAGS.workdir)
-  elif FLAGS.mode == "test":
-    train_utils.test(FLAGS.config, FLAGS.workdir)
+    # Add a note so that we can tell which Borg task is which JAX host.
+    # (Borg task 0 is not guaranteed to be host 0)
+    platform.work_unit().set_task_status(
+        f"host_id: {jax.host_id()}, host_count: {jax.host_count()}")
+    platform.work_unit().create_artifact(platform.ArtifactType.DIRECTORY,
+                                         FLAGS.workdir, "workdir")
+    if FLAGS.mode == "train":
+        train_utils.train(FLAGS.config, FLAGS.workdir)
+    elif FLAGS.mode == "test":
+        train_utils.test(FLAGS.config, FLAGS.workdir)
 
 
 if __name__ == "__main__":
-  # Provide access to --jax_backend_target and --jax_xla_backend flags.
-  jax.config.config_with_absl()
-  app.run(main)
+    # Provide access to --jax_backend_target and --jax_xla_backend flags.
+    jax.config.config_with_absl()
+    app.run(main)
