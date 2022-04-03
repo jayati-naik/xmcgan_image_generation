@@ -16,11 +16,11 @@ import jax
 
 
 def get_device_groups(group_batch_size, device_batch_size):
-  assert group_batch_size % device_batch_size == 0
-  group_size = group_batch_size // device_batch_size
-  assert jax.device_count() % group_size == 0
-  return [
-      list(j
-           for j in range(i, i + group_size))
-      for i in range(0, jax.device_count(), group_size)
-  ]
+    assert group_batch_size % device_batch_size == 0
+    group_size = group_batch_size // device_batch_size
+    assert jax.device_count() % group_size == 0
+    return [
+        list(j
+             for j in range(i, i + group_size))
+        for i in range(0, jax.device_count(), group_size)
+    ]

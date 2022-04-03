@@ -17,36 +17,35 @@ import jax.numpy as jnp
 
 
 def hinge_loss_g(fake_logit: jnp.ndarray) -> jnp.ndarray:
-  return -jnp.mean(fake_logit)
+    return -jnp.mean(fake_logit)
 
 
 def hinge_loss_d(real_logit: jnp.ndarray,
                  fake_logit: jnp.ndarray) -> jnp.ndarray:
-  real_loss = jnp.mean(jax.nn.relu(1.0 - real_logit))
-  fake_loss = jnp.mean(jax.nn.relu(1.0 + fake_logit))
-  return real_loss + fake_loss
+    real_loss = jnp.mean(jax.nn.relu(1.0 - real_logit))
+    fake_loss = jnp.mean(jax.nn.relu(1.0 + fake_logit))
+    return real_loss + fake_loss
 
 
 def hinge_loss(real_logit: jnp.ndarray, fake_logit: jnp.ndarray) -> jnp.ndarray:
-  generator_loss = -jnp.mean(fake_logit)
-  real_loss = jax.nn.relu(1.0 - real_logit)
-  fake_loss = jax.nn.relu(1.0 + fake_logit)
-  discriminator_loss = jnp.mean(real_loss + fake_loss)
-  return discriminator_loss, generator_loss
+    generator_loss = -jnp.mean(fake_logit)
+    real_loss = jax.nn.relu(1.0 - real_logit)
+    fake_loss = jax.nn.relu(1.0 + fake_logit)
+    discriminator_loss = jnp.mean(real_loss + fake_loss)
+    return discriminator_loss, generator_loss
 
 
 def cross_entropy_loss_with_logits(*, labels: jnp.ndarray,
                                    logits: jnp.ndarray) -> jnp.ndarray:
-  """Calculates the cross entropy loss: label is one dimensional, not one hot."""
+    """Calculates the cross entropy loss: label is one dimensional, not one hot."""
 
-  logp = jax.nn.log_softmax(logits)
-  loglik = jnp.take_along_axis(logp, labels[:, None], axis=1)
-  return -loglik
+    logp = jax.nn.log_softmax(logits)
+    loglik = jnp.take_along_axis(logp, labels[:, None], axis=1)
+    return -loglik
 
 
 def tf_cross_entropy_loss_with_logits(*, labels: jnp.ndarray,
                                       logits: jnp.ndarray) -> jnp.ndarray:
-  logp = jax.nn.log_softmax(logits)
-  loss = - jnp.sum(jnp.multiply(labels, logp), axis=-1)
-  return loss
-
+    logp = jax.nn.log_softmax(logits)
+    loss = - jnp.sum(jnp.multiply(labels, logp), axis=-1)
+    return loss

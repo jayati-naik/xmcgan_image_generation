@@ -1,4 +1,5 @@
 ### Running Interactively
+
 ```
 # 100 train-data run
 salloc --time=0:20:00 --cpus-per-task=1 --mem=4GB --partition=gpu  --gres=gpu:v100:1 --account=xiangren_818 --priority=TOP
@@ -24,6 +25,7 @@ bash train.sh train-train-run &> /home1/pindikan/CSCI566-Project/code_base/exper
 ```
 
 ### Running in batch
+
 ```
 sbatch slurm-train.job
 ```
