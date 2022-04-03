@@ -172,6 +172,6 @@ class COCODataset(base_dataset.BaseDataset):
             return {"train": 116_680, "val": 4_958}
         elif self.coco_version == "2014":
             # return {"train": 82_783, "val": 40_504}
-            return {"train": 100, "val": 20}
+            return {"train": 5000, "val": 500}
         elif self.coco_version == "ln":
             return {"train": 134_272, "val": 8_573}

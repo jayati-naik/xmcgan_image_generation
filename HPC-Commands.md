@@ -4,6 +4,9 @@
 # 100 train-data run
 salloc --time=0:20:00 --cpus-per-task=1 --mem=4GB --partition=gpu  --gres=gpu:v100:1 --account=xiangren_818 --priority=TOP
 
+# 5000 train-data run
+salloc --time=2:00:00 --cpus-per-task=2 --mem=16GB --partition=gpu  --gres=gpu:v100:2 --account=xiangren_818 --priority=TOP
+
 # load modules
 module purge
 module load gcc/11.2.0
@@ -22,6 +25,10 @@ cd /home1/pindikan/CSCI566-Project/code_base/xmcgan_image_generation/
 
 # Run the Training
 bash train.sh train-train-run &> /home1/pindikan/CSCI566-Project/code_base/experiments/train-train-run.log
+
+# Run the Test
+bash test.sh train-train-run &> /home1/pindikan/CSCI566-Project/code_base/experiments/train-test-run.log
+
 ```
 
 ### Running in batch
