@@ -46,8 +46,8 @@ def get_config():
     config.train_shuffle = True
 
     config.image_size = 128
-    config.batch_size = 10
-    config.eval_batch_size = 5
+    config.batch_size = 4
+    config.eval_batch_size = 1
 
     config.df_dim = 96
     config.gf_dim = 96
