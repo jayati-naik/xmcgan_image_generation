@@ -510,3 +510,42 @@ def test(config: ml_collections.ConfigDict, workdir: str):
             result_dict = {f"eval/{k}": v for k, v in result_dict.items()}
             task_manager_csv.add_eval_result(checkpoint_path, result_dict, -1)
             writer.write_scalars(np.array(state.step)[0], result_dict)
+
+
+def generate_images(config: ml_collections.ConfigDict, workdir: str):
+    """
+    Generates Images
+    """
+    rng = jax.random.PRNGKey(config.seed)
+    # Make sure each host uses a different RNG for the training data.
+    rng = jax.random.fold_in(rng, jax.host_id())
+    # Input pipeline.
+    rng, data_rng = jax.random.split(rng)
+    _, eval_ds, _ = input_pipeline.create_datasets(config, data_rng)
+    eval_iter = iter(eval_ds)  # pytype: disable=wrong-arg-types
+
+    # Create evaluation metric utils and task manager.
+    eval_metric = eval_metrics.EvalMetric(eval_iter, config)  # pytype: disable=wrong-arg-types
+    checkpoint_dir = os.path.join(workdir, "checkpoints")
+    task_manager_csv = task_manager.TaskManagerWithCsvResults(checkpoint_dir)
+    checkpoints = task_manager_csv.unevaluated_checkpoints(timeout=24 * 3600)
+    writer = metric_writers.create_default_writer(workdir,
+                                                  just_logging=jax.host_id() > 0)
+
+    rng, eval_rng, model_rng = jax.random.split(rng, 3)
+    init_batch = jax.tree_map(np.asarray, next(eval_iter))
+    init_batch = jax.tree_map(
+        lambda x: x[0], init_batch)  # Remove the device dim, still 4D tensor
+    generator, _, state = create_train_state(config, model_rng, init_batch)
+    eval_generator = functools.partial(generator, train=False)
+
+    with metric_writers.ensure_flushes(writer):
+        for i, checkpoint_path in enumerate(checkpoints):
+            state = task_manager_csv.ckpt.restore_from_path(state, checkpoint_path)
+            state = flax_utils.replicate(state)
+            eval_metric.save_generated_images(eval_generator, state, eval_rng, workdir+f"/generated_images_{i}")
+
+
+
+
+

@@ -131,6 +131,7 @@ class EvalMetric:
         n_iter = (self.eval_num // self.eval_batch_size) + 1
         pool, logits = [], []
         ema_pool, ema_logits = [], []
+        generated_images = []
         p_generate_batch = jax.pmap(
             functools.partial(
                 self._get_generated_images,
@@ -152,6 +153,7 @@ class EvalMetric:
             ema_pool_val, ema_pool_logits = self._p_get_inception(ema_generated_image)
             ema_pool.append(ema_pool_val[0])
             ema_logits.append(ema_pool_logits[0])
+            generated_images.append(generated_image)
 
         pool_total = jnp.concatenate(pool, 1)
         pool_total = jnp.reshape(pool_total, (-1, 2048))
@@ -214,3 +216,40 @@ class EvalMetric:
 
         return (fid, fid_std, inception_score, inception_score_std, ema_fid,
                 ema_fid_std, ema_inception_score, ema_inception_score_std)
+
+    def save_generated_images(
+            self, generator_fn: Union[nn.Module,
+                                      functools.partial],
+            state: Any, rng: np.ndarray, save_path: str):
+
+        logging.info("Generating Images")
+
+        n_iter = (self.eval_num // self.eval_batch_size) + 1
+        generated_images, ema_generated_images = [], []
+        p_generate_batch = jax.pmap(
+            functools.partial(
+                self._get_generated_images,
+                generator=generator_fn,
+                config=self.config,
+            ),
+            axis_name="batch")
+        for step in range(n_iter):
+            inputs = jax.tree_map(np.asarray, next(self.ds))  # pytype: disable=wrong-arg-types
+            step_sample_batch_rng = jax.random.fold_in(rng, step)
+            step_sample_batch_rngs = jax.random.split(step_sample_batch_rng,
+                                                      jax.local_device_count())
+            generated_image, ema_generated_image = p_generate_batch(
+                step_sample_batch_rngs, state,
+                jax.tree_map(np.asarray, inputs))  # (1, 4, 128, 128, 3)
+            generated_images.append(np.array(generated_image))
+            ema_generated_images.append(np.array(ema_generated_image))
+
+        generated_images = np.array(generated_images)
+        ema_generated_images = np.array(ema_generated_images)
+
+        np.save(save_path + "/generated_images.npy", generated_images)
+        logging.info(f"Saved Images at {save_path+'/generated_images.npy'}")
+        np.save(save_path + "/ema_generated_images.npy", ema_generated_images)
+        logging.info(f"Saved Images at {save_path + '/ema_generated_images.npy'}")
+
+        return None

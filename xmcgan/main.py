@@ -61,6 +61,8 @@ def main(argv):
         train_utils.train(FLAGS.config, FLAGS.workdir)
     elif FLAGS.mode == "test":
         train_utils.test(FLAGS.config, FLAGS.workdir)
+    elif FLAGS.mode == "generate":
+        train_utils.generate_images(FLAGS.config, FLAGS.workdir)
 
 
 if __name__ == "__main__":
