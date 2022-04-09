@@ -47,7 +47,7 @@ def get_config():
 
     config.image_size = 128
     config.batch_size = 4
-    config.eval_batch_size = 1
+    config.eval_batch_size = 2
 
     config.df_dim = 96
     config.gf_dim = 96
