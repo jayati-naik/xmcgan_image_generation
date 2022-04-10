@@ -22,8 +22,10 @@ import jax.numpy as jnp
 import ml_collections
 import numpy as np
 import tensorflow as tf
+import os
 
 from xmcgan.utils import inception_utils
+
 
 
 class EvalMetric:
@@ -247,6 +249,10 @@ class EvalMetric:
         generated_images = np.array(generated_images)
         ema_generated_images = np.array(ema_generated_images)
 
+        try:
+            os.mkdir(save_path)
+        except Exception as e:
+            print(e)
         np.save(save_path + "/generated_images.npy", generated_images)
         logging.info(f"Saved Images at {save_path+'/generated_images.npy'}")
         np.save(save_path + "/ema_generated_images.npy", ema_generated_images)
