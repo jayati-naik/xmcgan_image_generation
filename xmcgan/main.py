@@ -31,6 +31,8 @@ flags.DEFINE_string("workdir", None, "Work unit directory.")
 flags.mark_flags_as_required(["config", "workdir"])
 flags.DEFINE_enum("mode", "train", ["train", "test"], "job status")
 
+GENERATE_FLAG = True
+
 
 # Flags --jax_backend_target and --jax_xla_backend are available through JAX.
 
@@ -60,9 +62,10 @@ def main(argv):
     if FLAGS.mode == "train":
         train_utils.train(FLAGS.config, FLAGS.workdir)
     elif FLAGS.mode == "test":
-        train_utils.test(FLAGS.config, FLAGS.workdir)
-    elif FLAGS.mode == "generate":
-        train_utils.generate_images(FLAGS.config, FLAGS.workdir)
+        if GENERATE_FLAG:
+            train_utils.generate_images(FLAGS.config, FLAGS.workdir)
+        else:
+            train_utils.test(FLAGS.config, FLAGS.workdir)
 
 
 if __name__ == "__main__":
