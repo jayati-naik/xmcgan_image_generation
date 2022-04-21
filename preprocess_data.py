@@ -96,7 +96,7 @@ def serialize_example(ex):
 
 if __name__ == '__main__':
   # Preprocess train and val data.
-  coco_mini_dataset = set(line.strip() for line in open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/data/minicoco_train_fnames_2014.txt'))
+  coco_mini_dataset = set(line.strip() for line in open('/home1/jnaik/CSCI566-Project/code_base/xmcgan_image_generation/data/minicoco_train_fnames_2014.txt'))
   print(coco_mini_dataset)
   for process_split in ['train', 'validation']:
       tfds_splits = ['train']
@@ -107,7 +107,7 @@ if __name__ == '__main__':
       output_path = f'data/coco2014_{process_split}.tfrecord'
       with tf.io.TFRecordWriter(output_path) as file_writer:
           for tfds_split in tfds_splits:
-              ds = tfds.load('coco_captions', split=tfds_split, data_dir='/ifs/loni/faculty/thompson/four_d/jnaik/cocodataset2014/data')
+              ds = tfds.load('coco_captions', split=tfds_split, data_dir='/scratch1/jnaik/tensorflow_datasets')
               for features in tqdm(ds, position=0):
                   filename = features['image/filename']
                   filename = bytes.decode(filename.numpy()).split('.jpg')[0]
