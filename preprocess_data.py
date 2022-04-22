@@ -116,6 +116,7 @@ if __name__ == '__main__':
                           count += 1
                           file_writer.write(serialize_example(features))
                   else:
+                      print(tfds_split)
                       file_writer.write(serialize_example(features))
               print(count)
 
