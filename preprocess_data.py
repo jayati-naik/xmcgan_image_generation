@@ -110,9 +110,12 @@ if __name__ == '__main__':
               ds = tfds.load('coco_captions', split=tfds_split, data_dir='/scratch1/jnaik/tensorflow_datasets')
               for features in tqdm(ds, position=0):
                   filename = features['image/filename']
-                  filename = bytes.decode(filename.numpy()).split('.jpg')[0]
+                  filename = bytes.decode(filename.numpy()).split('.jpg')
+                  print(f'Hello 000000 00000000000 {filename[0]}')
                   if tfds_split == 'train':
-                      if filename in coco_mini_dataset:
+                      print(tfds_split)
+                      if filename[0] in coco_mini_dataset:
+                          print(tfds_split)
                           count += 1
                           file_writer.write(serialize_example(features))
                   else:
