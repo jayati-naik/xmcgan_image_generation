@@ -10,13 +10,6 @@
 
 source /home1/jnaik/venv_tmage/bin/activate
 
-# load modules
-module purge
-module load gcc/11.2.0
-module load python
-module load cuda/11.4.0 
-module load cudnn/8.2.4.15-11.4
-
 python preprocess_data.py
 
 bash train.sh train2_b25_e500 &> logs/train2_b25_e500.txt
