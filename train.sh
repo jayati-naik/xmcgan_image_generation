@@ -17,7 +17,7 @@ CONFIG="xmcgan/configs/coco_xmc.py"
 EXP_NAME=$1
 WORKDIR="/home1/jnaik/CSCI566-Project/code_base/experiments/$EXP_NAME"  # CHANGEME
 
-CUDA_VISIBLE_DEVICES="0,1" python -m xmcgan.main \
+CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6" python -m xmcgan.main \
   --config="$CONFIG" \
   --mode="train" \
   --workdir="$WORKDIR" \
