@@ -166,7 +166,7 @@ class COCODataset(base_dataset.BaseDataset):
     )
     filenames = features["image/filename"]
     filenames = tf.strings.substr(filenames, pos=0, len=13)
-    filenames = tf.strings.substr(filenames, pos=12, len=4)
+    filenames = tf.strings.to_number(tf.strings.substr(filenames, pos=12, len=4), out_type=tf.dtypes.int32)
 
     print(filenames)
 
