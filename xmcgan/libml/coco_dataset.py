@@ -165,7 +165,9 @@ class COCODataset(base_dataset.BaseDataset):
         sentence_embedding=tf.cast(sentence_feat[idx], self.data_dtype),
     )
     filenames = features["image/filename"]
+    print(filenames)
     filenames = tf.strings.substr(filenames, pos=0, len=13)
+    print(filenames)
     filenames = tf.strings.to_number(tf.strings.substr(filenames, pos=12, len=4), out_type=tf.int32)
 
     print(filenames)
