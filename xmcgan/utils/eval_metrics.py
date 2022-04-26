@@ -110,6 +110,7 @@ class EvalMetric:
     def jax_save(file, arr):
       def save_to_file(a, transforms):
           print("save image")
+          tf.print(a)
           B, _, _, _ = a.shape()
           for i in range(B):
             file = tf.strings.as_string(filenames[i])
