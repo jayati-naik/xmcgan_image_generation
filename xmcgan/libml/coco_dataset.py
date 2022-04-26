@@ -165,11 +165,11 @@ class COCODataset(base_dataset.BaseDataset):
         sentence_embedding=tf.cast(sentence_feat[idx], self.data_dtype),
     )
     filenames = features["image/filename"]
-    tf.print(filenames)
+    # tf.print(filenames)
     filenames = tf.strings.substr(filenames, pos=13, len=12)
-    tf.print(filenames)
+    # tf.print(filenames)
     filenames = tf.strings.to_number(filenames, out_type=tf.int32)
-    tf.print(filenames)
+    # tf.print(filenames)
 
     if self.return_text:
       output["text"] = features["caption/text"][idx]

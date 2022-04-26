@@ -134,7 +134,9 @@ class EvalMetric:
     print("Save batches")
     B, _, _, _ = generated_image.shape()
     for i in range(B):
-      jax_save(filenames[i], generated_image[i])
+      file = tf.strings.as_string(filenames[i])
+      # file = 'COCO_val2014_'+file+'.jpg'
+      jax_save(file, generated_image[i])
 
     return generated_image, ema_generated_image
 
