@@ -165,8 +165,10 @@ class COCODataset(base_dataset.BaseDataset):
         sentence_embedding=tf.cast(sentence_feat[idx], self.data_dtype),
     )
     filenames = features["image/filename"]
-    filenames = np.char.lstrip(filenames, 'COCO_val2014_')
-    filenames = np.char.rstrip(filenames, '.jpg')
+    filenames = tf.strings.substr(filenames, pos=0, len=13)
+    filenames = tf.strings.substr(filenames, pos=12, len=4)
+
+    print(filenames)
 
     if self.return_text:
       output["text"] = features["caption/text"][idx]
