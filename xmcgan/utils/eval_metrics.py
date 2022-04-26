@@ -132,6 +132,7 @@ class EvalMetric:
 
     filenames = batch["filename"]
     print("Save batches")
+    print(f'generated_image: {type(generated_image)}')
     B, _, _, _ = generated_image.shape()
     for i in range(B):
       file = tf.strings.as_string(filenames[i])
