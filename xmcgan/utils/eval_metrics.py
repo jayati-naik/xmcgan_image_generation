@@ -107,16 +107,13 @@ class EvalMetric:
       generated_image: [batch_size, H, W, 3] array with values in [0, 1].
       ema_generated_image: [batch_size, H, W, 3] array with values in [0, 1].
     """
-    def jax_save(file, arr):
-      def save_to_file(a, transforms):
+    def jax_save(file, batch_images, bsize):
+      def save_to_file(b_img, transforms):
           print("save image")
-          tf.print(a)
-          B, _, _, _ = a.shape()
-          for i in range(B):
-            file = tf.strings.as_string(filenames[i])
-            # file = 'COCO_val2014_'+file+'.jpg'
-          jax.numpy.save('/images/'+file, a)
-      hcb.id_tap(save_to_file, arr)
+          for i in range(bsize):
+            f = tf.strings.as_string(file[i])
+            jax.numpy.save('/images/'+f, b_img[i])
+      hcb.id_tap(save_to_file, batch_images)
 
     if config.dtype == "bfloat16":
       dtype = jnp.bfloat16
@@ -135,10 +132,12 @@ class EvalMetric:
     generated_image = jnp.asarray(generated_image, jnp.float32)
     ema_generated_image = jnp.asarray(ema_generated_image, jnp.float32)
 
+    bsize = batch["image"].shape[0]
+
     filenames = batch["filename"]
     print("Save batches")
     print(f'generated_image: {type(generated_image)}')
-    jax_save(filenames, generated_image)
+    jax_save(filenames, generated_image, bsize)
 
     return generated_image, ema_generated_image
 
