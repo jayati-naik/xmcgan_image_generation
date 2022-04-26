@@ -110,6 +110,10 @@ class EvalMetric:
     def jax_save(file, arr):
       def save_to_file(a, transforms):
           print("save image")
+          B, _, _, _ = a.shape()
+          for i in range(B):
+            file = tf.strings.as_string(filenames[i])
+            # file = 'COCO_val2014_'+file+'.jpg'
           jax.numpy.save('/images/'+file, a)
       hcb.id_tap(save_to_file, arr)
 
@@ -133,11 +137,7 @@ class EvalMetric:
     filenames = batch["filename"]
     print("Save batches")
     print(f'generated_image: {type(generated_image)}')
-    B, _, _, _ = generated_image.shape()
-    for i in range(B):
-      file = tf.strings.as_string(filenames[i])
-      # file = 'COCO_val2014_'+file+'.jpg'
-      jax_save(file, generated_image[i])
+    jax_save(filenames, generated_image)
 
     return generated_image, ema_generated_image
 
