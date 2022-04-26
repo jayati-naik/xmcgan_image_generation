@@ -166,14 +166,14 @@ class COCODataset(base_dataset.BaseDataset):
     )
     filenames = features["image/filename"]
     filenames = tf.strings.substr(filenames, pos=0, len=13)
-    filenames = tf.strings.to_number(tf.strings.substr(filenames, pos=12, len=4), out_type=tf.dtypes.int32)
+    filenames = tf.strings.to_number(tf.strings.substr(filenames, pos=12, len=4), out_type=tf.int32)
 
     print(filenames)
 
     if self.return_text:
       output["text"] = features["caption/text"][idx]
     if self.return_filename:
-      output["filename"] = tf.cast(filenames, tf.int8)
+      output["filename"] = tf.cast(filenames, tf.int32)
     z = tf.random.stateless_normal((self.z_dim,), rng_z, dtype=self.data_dtype)
     output.update({"z": z})
     return output
