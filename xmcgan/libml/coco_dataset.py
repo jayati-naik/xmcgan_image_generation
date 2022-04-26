@@ -22,7 +22,6 @@ from xmcgan.libml import dataset_constants
 import jax
 import jax.numpy as jnp
 
-tf.enable_eager_execution()
 
 _DEFAULT_STORAGE_DIR = "xmcgan/data/"
 _VALID_DATASET_VERSIONS = ("2014","2014-tmage")
@@ -167,7 +166,7 @@ class COCODataset(base_dataset.BaseDataset):
     if self.return_text:
       output["text"] = features["caption/text"][idx]
     if self.return_filename:
-      output["filename"] = jnp.array(features["image/filename"].numpy())
+      output["filename"] = features["image/filename"]
     z = tf.random.stateless_normal((self.z_dim,), rng_z, dtype=self.data_dtype)
     output.update({"z": z})
     return output
