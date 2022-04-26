@@ -168,8 +168,8 @@ class COCODataset(base_dataset.BaseDataset):
     tf.print(filenames)
     filenames = tf.strings.substr(filenames, pos=12, len=12)
     tf.print(filenames)
-    # filenames = tf.strings.to_number(tf.strings.substr(filenames, pos=12, len=4), out_type=tf.int32)
-    # tf.print(filenames)
+    filenames = tf.strings.to_number(filenames, out_type=tf.int32)
+    tf.print(filenames)
 
     if self.return_text:
       output["text"] = features["caption/text"][idx]
