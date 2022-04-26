@@ -22,6 +22,8 @@ from xmcgan.libml import dataset_constants
 import jax
 import jax.numpy as jnp
 
+import numpy as np
+
 
 _DEFAULT_STORAGE_DIR = "xmcgan/data/"
 _VALID_DATASET_VERSIONS = ("2014","2014-tmage")
@@ -162,11 +164,14 @@ class COCODataset(base_dataset.BaseDataset):
         max_len=tf.cast(max_len[idx], self.data_dtype),
         sentence_embedding=tf.cast(sentence_feat[idx], self.data_dtype),
     )
-    print(type(features["image/filename"]))
+    filenames = features["image/filename"]
+    filenames = np.char.lstrip(filenames, 'COCO_val2014_')
+    filenames = np.char.rstrip(filenames, '.jpg')
+
     if self.return_text:
       output["text"] = features["caption/text"][idx]
     if self.return_filename:
-      output["filename"] = features["image/filename"]
+      output["filename"] = tf.cast(filenames, tf.int8)
     z = tf.random.stateless_normal((self.z_dim,), rng_z, dtype=self.data_dtype)
     output.update({"z": z})
     return output
