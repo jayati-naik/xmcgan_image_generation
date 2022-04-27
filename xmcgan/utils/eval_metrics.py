@@ -120,11 +120,11 @@ class EvalMetric:
           name_img_mapping['id'] = id
           name_img_mapping['b_img'] = id+'.npy'
 
-          with open('file.csv', 'a') as f:
+          with open('/images/file.csv', 'a') as f:
             f.append("{%s: %s, "%('id',name_img_mapping['id']))
             f.append("%s: %s}\n"%('b_img',name_img_mapping['b_img']))
 
-          jnp.save(id, jnp_b_imgs)
+          jnp.save('/images/'id, jnp_b_imgs)
 
       hcb.id_tap(save_to_file, batch)
 
