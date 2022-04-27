@@ -113,6 +113,7 @@ class EvalMetric:
           jnp_b_img = jnp.asarray(b_img)
           b = jnp_b_img.shape[0]
           f = jnp.asarray(file)
+          print(jnp_b_img)
           print(f)
           for i in range(b):
             print(str(f[i]))
