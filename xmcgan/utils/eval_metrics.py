@@ -110,13 +110,13 @@ class EvalMetric:
     def jax_save(file, batch_images):
       def save_to_file(b_img, transforms):
           print("save image")
-          np_b_img = jnp.asarray(b_img)
-          b = np_b_img.shape[0]
+          jnp_b_img = jnp.asarray(b_img)
+          b = jnp_b_img.shape[0]
           f = jnp.asarray(file)
           print(f)
           for i in range(b):
             print(str(f[i]))
-            jax.numpy.save(str(f[i]), np_b_img[i])
+            jnp.save(str(f[i]), jnp_b_img[i])
       hcb.id_tap(save_to_file, batch_images)
 
     if config.dtype == "bfloat16":
