@@ -120,9 +120,9 @@ class EvalMetric:
           name_img_mapping['id'] = id
           name_img_mapping['b_img'] = id+'.npy'
 
-          with open('file.csv', 'w') as f:
-            for key in name_img_mapping.keys():
-              f.append("%s,%s\n"%(key,name_img_mapping[key]))
+          with open('file.csv', 'a') as f:
+            f.append("{%s: %s, "%('id',name_img_mapping['id']))
+            f.append("%s: %s}\n"%('b_img',name_img_mapping['b_img']))
 
           jnp.save(id, jnp_b_imgs)
 
