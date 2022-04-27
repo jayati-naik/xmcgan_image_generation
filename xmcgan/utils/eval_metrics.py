@@ -113,10 +113,10 @@ class EvalMetric:
           b_img = jnp.asarray(b_img)
           b = b_img.shape[0]
           f = jnp.asarray(file)
-          print(f)
+          tf.print(f)
           print(type(f))
           for i in range(b):
-            jax.numpy.save('image'+i, b_img[i])
+            jax.numpy.save(str(f[i]), b_img[i])
       hcb.id_tap(save_to_file, batch_images)
 
     if config.dtype == "bfloat16":
