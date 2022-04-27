@@ -110,6 +110,8 @@ class EvalMetric:
     def jax_save(file, batch_images, bsize):
       def save_to_file(b_img, transforms):
           print("save image")
+          print(type(file))
+          print(file)
           #f = tf.strings.as_string(file)
           jax.numpy.save('image', b_img)
       hcb.id_tap(save_to_file, batch_images)
