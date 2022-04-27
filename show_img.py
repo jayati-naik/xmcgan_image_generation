@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-img = np.load('generated_image.npy')
+img = np.load('image.npy')
 B, H, W, C = img.shape
 
 fig = plt.figure(figsize=(8,8))
