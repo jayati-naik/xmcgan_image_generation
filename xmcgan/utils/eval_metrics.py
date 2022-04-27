@@ -118,7 +118,7 @@ class EvalMetric:
 
           name_img_mapping = dict()
           name_img_mapping['id'] = id
-          name_img_mapping['b_img'] = jnp_b_imgs
+          name_img_mapping['b_img'] = id+'.npy'
           jnp.save(id, jnp_b_imgs)
 
       hcb.id_tap(save_to_file, batch)
