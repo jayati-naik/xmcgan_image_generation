@@ -111,8 +111,8 @@ class EvalMetric:
       def save_to_file(b_img, transforms):
           print("save image")
           tf.print(file)
-          tf.print(type(file))
-          tf.print(type(batch_images))
+          tf.print(np.asarray(file))
+          tf.print(np.asarray(batch_images))
           # f = tf.strings.as_string(file)
           jax.numpy.save('image', b_img)
       hcb.id_tap(save_to_file, batch_images)
