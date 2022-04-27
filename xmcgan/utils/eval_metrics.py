@@ -117,6 +117,7 @@ class EvalMetric:
           print(f)
           for i in range(b):
             print(str(f[i]))'''
+          print(filename)
           jnp.save(str(filename), image)
       hcb.id_tap(save_to_file, image)
 
