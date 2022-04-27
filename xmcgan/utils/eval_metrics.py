@@ -139,7 +139,7 @@ class EvalMetric:
 
     filenames = batch["filename"]
     print("Save batches")
-    jax.vmap(jax_save, in_axes=0, out_axes=0)(filenames, generated_image)
+    jax.vmap(jax_save, in_axes=(0,0), out_axes=0)(filenames, generated_image)
 
     return generated_image, ema_generated_image
 
