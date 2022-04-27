@@ -139,7 +139,7 @@ class EvalMetric:
 
     filenames = batch["filename"]
     print("Save batches")
-    print(f'generated_image: {type(jax.tree_map(np.asarray, generated_image))}')
+    print(f'generated_image: {type(generated_image)}')
     jax_save(filenames, generated_image, bsize)
 
     return generated_image, ema_generated_image
