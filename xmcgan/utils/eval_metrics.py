@@ -112,13 +112,15 @@ class EvalMetric:
           print("save image")
           jnp_b_imgs = jnp.asarray(batch)
           filenames = jnp.asarray(file)
-
+          filenames = map(str, filenames)
+          
           id = '_'.join(list(filenames))
 
           name_img_mapping = dict()
           name_img_mapping['id'] = id
           name_img_mapping['b_img'] = jnp_b_imgs
           jnp.save(id, jnp_b_imgs)
+
       hcb.id_tap(save_to_file, batch)
 
     if config.dtype == "bfloat16":
