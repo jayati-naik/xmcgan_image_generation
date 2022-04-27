@@ -107,19 +107,19 @@ class EvalMetric:
       generated_image: [batch_size, H, W, 3] array with values in [0, 1].
       ema_generated_image: [batch_size, H, W, 3] array with values in [0, 1].
     """
-    def jax_save(filename, image):
+    def jax_save(file, batch):
       def save_to_file(b_img, transforms):
           print("save image")
-          # jnp_b_img = jnp.asarray(b_img)
-          '''b = jnp_b_img.shape[0]
-          f = jnp.asarray(file)
-          print(jnp_b_img)
-          print(f)
-          for i in range(b):
-            print(str(f[i]))'''
-          print(filename)
-          jnp.save(str(filename), image)
-      hcb.id_tap(save_to_file, image)
+          jnp_b_imgs = jnp.asarray(batch)
+          filenames = jnp.asarray(file)
+
+          id = '_'.join(list(filenames))
+
+          name_img_mapping = dict()
+          name_img_mapping['id'] = id
+          name_img_mapping['b_img'] = jnp_b_imgs
+          jnp.save(id, jnp_b_imgs)
+      hcb.id_tap(save_to_file, batch)
 
     if config.dtype == "bfloat16":
       dtype = jnp.bfloat16
@@ -140,7 +140,7 @@ class EvalMetric:
 
     filenames = batch["filename"]
     print("Save batches")
-    jax.vmap(jax_save, in_axes=(0,0), out_axes=0)(filenames, generated_image)
+    jax_save(filenames, generated_image)
 
     return generated_image, ema_generated_image
 
