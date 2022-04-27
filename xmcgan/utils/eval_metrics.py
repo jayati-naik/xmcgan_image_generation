@@ -120,7 +120,7 @@ class EvalMetric:
       name_img_mapping['id'] = id
       name_img_mapping['b_img'] = id+'.npy'
 
-      with open('/images/file.csv', 'a') as f:
+      with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/images/file.csv', 'a') as f:
         f.append("{%s: %s, "%('id',name_img_mapping['id']))
         f.append("%s: %s}\n"%('b_img',name_img_mapping['b_img']))
 
