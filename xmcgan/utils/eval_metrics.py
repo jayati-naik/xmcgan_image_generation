@@ -108,25 +108,25 @@ class EvalMetric:
       ema_generated_image: [batch_size, H, W, 3] array with values in [0, 1].
     """
     def jax_save(file, batch):
-      def save_to_file(b_img, transforms):
-          print("save image")
-          jnp_b_imgs = jnp.asarray(batch)
-          filenames = jnp.asarray(file)
-          filenames = map(str, filenames)
-          
-          id = '_'.join(list(filenames))
+      # def save_to_file(b_img, transforms):
+      print("save image")
+      jnp_b_imgs = jnp.asarray(batch)
+      filenames = jnp.asarray(file)
+      filenames = map(str, filenames)
+      
+      id = '_'.join(list(filenames))
 
-          name_img_mapping = dict()
-          name_img_mapping['id'] = id
-          name_img_mapping['b_img'] = id+'.npy'
+      name_img_mapping = dict()
+      name_img_mapping['id'] = id
+      name_img_mapping['b_img'] = id+'.npy'
 
-          with open('/images/file.csv', 'a') as f:
-            f.append("{%s: %s, "%('id',name_img_mapping['id']))
-            f.append("%s: %s}\n"%('b_img',name_img_mapping['b_img']))
+      with open('/images/file.csv', 'a') as f:
+        f.append("{%s: %s, "%('id',name_img_mapping['id']))
+        f.append("%s: %s}\n"%('b_img',name_img_mapping['b_img']))
 
-          jnp.save('/images/'+id, jnp_b_imgs)
+      jnp.save('/images/'+id, jnp_b_imgs)
 
-      hcb.id_tap(save_to_file, batch)
+      #hcb.id_tap(save_to_file, batch)
 
     if config.dtype == "bfloat16":
       dtype = jnp.bfloat16
