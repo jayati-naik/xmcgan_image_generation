@@ -124,7 +124,7 @@ class EvalMetric:
             f.append("{%s: %s, "%('id',name_img_mapping['id']))
             f.append("%s: %s}\n"%('b_img',name_img_mapping['b_img']))
 
-          jnp.save('/images/'id, jnp_b_imgs)
+          jnp.save('/images/'+id, jnp_b_imgs)
 
       hcb.id_tap(save_to_file, batch)
 
