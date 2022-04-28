@@ -117,13 +117,13 @@ class EvalMetric:
 
         ema_gen_imgs = data['ema_gen_img']
         
-                print(gen_imgs)
+        print(gen_imgs)
 
         # Un-normalize image data
         gen_imgs = jnp.clip(gen_imgs * 255.0 + 0.5, 0, 255).astype(jnp.uint8)
         ema_gen_imgs = jnp.clip(gen_imgs * 255.0 + 0.5, 0, 255).astype(jnp.uint8)
         
-                print(gen_imgs)
+        print(gen_imgs)
 
         # Fetch filenames from batch 
         input = data['batch']
