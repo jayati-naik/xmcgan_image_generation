@@ -152,9 +152,6 @@ def create_train_state(
     dtype = jnp.float32
   inputs = init_batch
 
-  print('&*********************** Create train state, check for filename &***********************')
-  print(f'{inputs["filename"]}')
-
   if config.architecture == "xmc_net":
     generator_cls = xmc_net.Generator
     discriminator_cls = xmc_net.Discriminator

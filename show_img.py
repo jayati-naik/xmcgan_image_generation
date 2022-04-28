@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-img = np.load('image.npy')
+img = np.load('images/323528_491000_427521_26200_155877_227741_263288.npy',allow_pickle=True)
 B, H, W, C = img.shape
 
 fig = plt.figure(figsize=(8,8))
