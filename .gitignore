@@ -1,3 +1,10 @@
 data/
 exp/
 logs/
+images/
+xmcgan/__pycache__/
+xmcgan/configs/__pycache__/
+xmcgan/libml/__pycache__/
+xmcgan/nets/__pycache__/
+xmcgan/utils/__pycache__/
+.DS_Store
