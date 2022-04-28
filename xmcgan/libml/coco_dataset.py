@@ -165,22 +165,27 @@ class COCODataset(base_dataset.BaseDataset):
         sentence_embedding=tf.cast(sentence_feat[idx], self.data_dtype),
     )
     filenames = features["image/filename"]
-    # tf.print(filenames)
+    # print(f'1 {filenames}')
     filenames = tf.strings.substr(filenames, pos=13, len=12)
-    # tf.print(filenames)
+    # print(f'2 {filenames}')
     filenames = tf.strings.to_number(filenames, out_type=tf.int32)
-    # tf.print(filenames)
+    # print(f'3 {filenames}')
+
+    # Print data
+    print(idx)
+
+    print(filenames, features["caption/text"][idx])
 
     if self.return_text:
       output["text"] = features["caption/text"][idx]
     if self.return_filename:
-      output["filename"] = filenames #tf.cast(filenames, tf.int32)
+      output["filename"] = filenames
     z = tf.random.stateless_normal((self.z_dim,), rng_z, dtype=self.data_dtype)
     output.update({"z": z})
     return output
 
   @property
-  def num_examples(self):
+  def num_examples(self): 
     if self.coco_version == "2017":
       return {"train": 116_680, "val": 4_958}
     elif self.coco_version == "2014":

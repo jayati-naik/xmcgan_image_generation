@@ -24,6 +24,7 @@ import numpy as np
 import tensorflow as tf
 import imageio
 from jax.experimental import host_callback as hcb
+import time
 
 from xmcgan.utils import inception_utils
 
@@ -107,26 +108,44 @@ class EvalMetric:
       generated_image: [batch_size, H, W, 3] array with values in [0, 1].
       ema_generated_image: [batch_size, H, W, 3] array with values in [0, 1].
     """
-    def jax_save(file, batch):
-      # def save_to_file(b_img, transforms):
-      print("save image")
-      jnp_b_imgs = jnp.asarray(batch)
-      filenames = jnp.asarray(file)
-      filenames = map(str, filenames)
-      
-      id = '_'.join(list(filenames))
+    def save_batch_image(data:jnp.ndarray):
+      def save_to_file(data, transforms):
+        input = data['batch']
 
-      name_img_mapping = dict()
-      name_img_mapping['id'] = id
-      name_img_mapping['b_img'] = id+'.npy'
+        # Fetch images
+        gen_imgs = data['gen_img']
 
-      with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/images/file.csv', 'a') as f:
-        f.write("{%s: %s, "%('id',name_img_mapping['id']))
-        f.write("%s: %s}\n"%('b_img',name_img_mapping['b_img']))
+        ema_gen_imgs = data['ema_gen_img']
+        
+                print(gen_imgs)
 
-      jnp.save('/images/'+id, jnp_b_imgs)
+        # Un-normalize image data
+        gen_imgs = jnp.clip(gen_imgs * 255.0 + 0.5, 0, 255).astype(jnp.uint8)
+        ema_gen_imgs = jnp.clip(gen_imgs * 255.0 + 0.5, 0, 255).astype(jnp.uint8)
+        
+                print(gen_imgs)
 
-      #hcb.id_tap(save_to_file, batch)
+        # Fetch filenames from batch 
+        input = data['batch']
+        filenames = input["filename"]
+        print(type(filenames))
+        _filenames = map(str, filenames)
+        
+        ids = '_'.join(list(_filenames))
+
+        name_img_mapping = dict()
+        name_img_mapping['ids'] = ids
+
+        with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/images/file.csv', 'a') as f:
+          f.write("%s,%s\n"%('ids',name_img_mapping['ids']))
+
+        time_in_milis = str(round(time.time() * 1000))
+
+        jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/images/'+ids+'-'+time_in_milis, gen_imgs)
+
+        jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/images/ema-'+ids+'-'+time_in_milis, ema_gen_imgs)
+
+      hcb.id_tap(save_to_file, data)
 
     if config.dtype == "bfloat16":
       dtype = jnp.bfloat16
@@ -145,10 +164,17 @@ class EvalMetric:
     generated_image = jnp.asarray(generated_image, jnp.float32)
     ema_generated_image = jnp.asarray(ema_generated_image, jnp.float32)
 
-    filenames = batch["filename"]
-    print("Save batches")
-    jax_save(filenames, generated_image)
+    # Tmage1.0
+    # Organize data for tapping
+    data = dict()
+    data['batch'] = batch
+    data['gen_img'] = generated_image
+    data['ema_gen_img'] = ema_generated_image
 
+    # Call JAx_save for data tapping
+    logging.info("Save Generated images")
+    save_batch_image(data)
+    
     return generated_image, ema_generated_image
 
   def _get_generated_pool_for_evaluation(self,
