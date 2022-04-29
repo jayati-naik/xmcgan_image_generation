@@ -31,6 +31,7 @@ def get_config():
   config.coco_version = "2014"
   config.data_dir = "data/"
   config.return_text = False
+  config.return_text_index = True
   config.return_filename = True
 
   config.trial = 0  # dummy for repeated runs.

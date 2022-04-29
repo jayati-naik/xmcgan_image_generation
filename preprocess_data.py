@@ -77,9 +77,12 @@ def get_bytes_feature(value):
 def serialize_example(ex):
   """Converts a TFDS coco_caption example into the expected format."""
   caption_list = [s.decode() for s in ex['captions']['text'].numpy()][:5]
+  caption_index_list = replace_caption_by_index(caption_list)
   embedding, _, max_len = get_bert_for_captions(caption_list)
   image_data = tf.io.encode_png(ex['image'])
   filename = ex['image/filename']
+  
+  print(caption_index_list)
 
   context_features = {
       'image':
@@ -92,10 +95,31 @@ def serialize_example(ex):
           get_int64_feature(max_len),
       'caption/text':
           get_bytes_feature(caption_list),
+      'caption/text_idx':
+          get_int64_feature(caption_index_list),
   }
   tf_ex = tf.train.Example(features=tf.train.Features(feature=context_features))
   return tf_ex.SerializeToString()
 
+def replace_caption_by_index(captions):
+  caption_idx = list()
+ 
+  with open('data/XMCGAN_COCO_captions.txt') as f:
+    caption_text_list = [line.strip() for line in f]
+
+  count = 0
+  for c in captions:
+    c = c.strip()
+    if c in caption_text_list:
+      idx = caption_text_list.index(c)
+      caption_idx.append(idx)
+      count += 1
+    else:
+      print(c)
+  
+  print(count)
+
+  return caption_idx
 
 if __name__ == '__main__':
   # Preprocess train and val data.
@@ -106,7 +130,7 @@ if __name__ == '__main__':
       tfds_splits = ['train']
       # COCO-2014 consists of 40k examples from these three splits.
       if process_split == 'validation':
-          tfds_splits = ['restval', 'test', 'val']
+          tfds_splits = ['train']
 
       output_path = f'data/coco2014_{process_split}.tfrecord'
       with tf.io.TFRecordWriter(output_path) as file_writer:

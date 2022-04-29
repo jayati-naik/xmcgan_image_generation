@@ -1,7 +1,6 @@
 data/
 exp/
 logs/
-images/
 xmcgan/__pycache__/
 xmcgan/configs/__pycache__/
 xmcgan/libml/__pycache__/

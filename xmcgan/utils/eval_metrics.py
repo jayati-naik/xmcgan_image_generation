@@ -114,36 +114,35 @@ class EvalMetric:
 
         # Fetch images
         gen_imgs = data['gen_img']
-
         ema_gen_imgs = data['ema_gen_img']
         
-        print(gen_imgs)
-
         # Un-normalize image data
         gen_imgs = jnp.clip(gen_imgs * 255.0 + 0.5, 0, 255).astype(jnp.uint8)
         ema_gen_imgs = jnp.clip(gen_imgs * 255.0 + 0.5, 0, 255).astype(jnp.uint8)
         
-        print(gen_imgs)
-
+        z = jnp.asarray(data['z'])
+        
         # Fetch filenames from batch 
         input = data['batch']
+
         filenames = input["filename"]
-        print(type(filenames))
         _filenames = map(str, filenames)
-        
-        ids = '_'.join(list(_filenames))
+        _filenames = '_'.join(list(_filenames))
 
-        name_img_mapping = dict()
-        name_img_mapping['ids'] = ids
+        text_index = input['text_idx']
+        _text_index = map(str, text_index)
+        _text_index = '_'.join(list(_text_index))
 
-        with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/images/file.csv', 'a') as f:
-          f.write("%s,%s\n"%('ids',name_img_mapping['ids']))
+        with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/batch_file.csv', 'a') as f:
+          f.write("%s,%s\n"%(_filenames, _text_index))
 
         time_in_milis = str(round(time.time() * 1000))
 
-        jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/images/'+ids+'-'+time_in_milis, gen_imgs)
+        jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/noise/'+_filenames+'-'+time_in_milis, z)
 
-        jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/images/ema-'+ids+'-'+time_in_milis, ema_gen_imgs)
+        jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/images/normal/'+_filenames+'-'+time_in_milis, gen_imgs)
+
+        jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/images/ema/ema-'+_filenames+'-'+time_in_milis, ema_gen_imgs)
 
       hcb.id_tap(save_to_file, data)
 
@@ -170,6 +169,7 @@ class EvalMetric:
     data['batch'] = batch
     data['gen_img'] = generated_image
     data['ema_gen_img'] = ema_generated_image
+    data['z'] = z
 
     # Call JAx_save for data tapping
     logging.info("Save Generated images")

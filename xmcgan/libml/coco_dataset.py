@@ -21,9 +21,9 @@ from xmcgan.libml import dataset_constants
 
 import jax
 import jax.numpy as jnp
+from jax.experimental import host_callback as hcb
 
 import numpy as np
-
 
 _DEFAULT_STORAGE_DIR = "xmcgan/data/"
 _VALID_DATASET_VERSIONS = ("2014","2014-tmage")
@@ -44,6 +44,7 @@ class COCODataset(base_dataset.BaseDataset):
       bert_dim: int = dataset_constants.PRETRAINED_BERT_DIM,
       return_text: bool = False,
       return_filename: bool = False,
+      return_text_index: bool = False,
       **kwargs,
   ):
     super().__init__(image_size=image_size, num_classes=num_classes, **kwargs)
@@ -58,6 +59,7 @@ class COCODataset(base_dataset.BaseDataset):
     self.data_dtype = data_dtype
     self.sentence_num = sentence_num
     self.return_text = return_text
+    self.return_text_index = return_text_index
     self.return_filename = return_filename
     self.max_text_length = dataset_constants.COCO_MAX_TEXT_LENGTH
 
@@ -85,6 +87,7 @@ class COCODataset(base_dataset.BaseDataset):
           have values in [0, 1].
         "image/filename": tf.string tensor indicating image filename.
         "caption/text": tf.string the string for the actual caption.
+        "caption/text_idx": tf.int64 the index for the actual caption.
         "caption/ids": tf.int of IDs of the tokenized caption.
     """
 
@@ -100,6 +103,8 @@ class COCODataset(base_dataset.BaseDataset):
             tf.io.FixedLenFeature(self.embeddding_shape, tf.float32),
         "caption/max_len":
             tf.io.VarLenFeature(tf.int64),
+        "caption/text_idx":
+            tf.io.VarLenFeature(tf.int64),
     }
 
     decoded_example = tf.io.parse_single_example(example, features)
@@ -111,6 +116,8 @@ class COCODataset(base_dataset.BaseDataset):
 
     decoded_example["caption/max_len"] = tf.sparse.to_dense(
         decoded_example["caption/max_len"])
+    decoded_example["caption/text_idx"] = tf.sparse.to_dense(
+        decoded_example["caption/text_idx"])
     decoded_example["caption/text"] = tf.sparse.to_dense(
         decoded_example["caption/text"], default_value="")
 
@@ -164,25 +171,28 @@ class COCODataset(base_dataset.BaseDataset):
         max_len=tf.cast(max_len[idx], self.data_dtype),
         sentence_embedding=tf.cast(sentence_feat[idx], self.data_dtype),
     )
+
+    # Tmage1.0 start
     filenames = features["image/filename"]
-    # print(f'1 {filenames}')
-    filenames = tf.strings.substr(filenames, pos=13, len=12)
-    # print(f'2 {filenames}')
-    filenames = tf.strings.to_number(filenames, out_type=tf.int32)
-    # print(f'3 {filenames}')
-
-    # Print data
-    print(idx)
-
-    print(filenames, features["caption/text"][idx])
+    # tf.print(filenames)
+    # filenames = tf.strings.substr(filenames, pos=13, len=12)
+    filenames = tf.strings.split(filenames, sep='COCO_train2014_')[1]
+    filenames = tf.strings.substr(filenames, pos=0, len=12)
+    filenames = tf.strings.to_number(filenames, out_type=tf.int64)
+    
 
     if self.return_text:
-      output["text"] = features["caption/text"][idx]
+      output["text"] = features["caption/text"][idx] 
     if self.return_filename:
-      output["filename"] = filenames
+      output["filename"] = filenames 
+    text_index = features["caption/text_idx"][idx]
+    output["text_idx"] =  tf.cast(text_index, tf.int64)
+    # Tmage1.0 end
+
     z = tf.random.stateless_normal((self.z_dim,), rng_z, dtype=self.data_dtype)
     output.update({"z": z})
     return output
+
 
   @property
   def num_examples(self): 
