@@ -94,7 +94,8 @@ class EvalMetric:
   def _get_generated_images(
       self, rng: np.ndarray, state: Any, batch: Dict[str, jnp.ndarray],
       generator: Union[nn.Module, functools.partial],
-      config: ml_collections.ConfigDict) -> Tuple[jnp.ndarray, jnp.ndarray]:
+      config: ml_collections.ConfigDict,
+      iter) -> Tuple[jnp.ndarray, jnp.ndarray]:
     """Gets pooling/logtis features for generated images per batch.
 
     Args:
@@ -121,12 +122,15 @@ class EvalMetric:
         ema_gen_imgs = jnp.clip(gen_imgs * 255.0 + 0.5, 0, 255).astype(jnp.uint8)
         
         z = jnp.asarray(data['z'])
+
+        iter = data['iter'] # Iteration in running
         
         # Fetch filenames from batch 
         input = data['batch']
 
         filenames = input["filename"]
         _filenames = map(str, filenames)
+        _filenames = map(( lambda x: f'{x}({iter})'), _filenames)
         _filenames = '_'.join(list(_filenames))
 
         text_index = input['text_idx']
@@ -170,6 +174,7 @@ class EvalMetric:
     data['gen_img'] = generated_image
     data['ema_gen_img'] = ema_generated_image
     data['z'] = z
+    data[iter] = iter
 
     # Call JAx_save for data tapping
     logging.info("Save Generated images")
@@ -192,21 +197,23 @@ class EvalMetric:
             config=self.config,
         ),
         axis_name="batch")
-    for step in range(n_iter):
-      inputs = jax.tree_map(np.asarray, next(self.ds))  # pytype: disable=wrong-arg-types
-      
-      step_sample_batch_rng = jax.random.fold_in(rng, step)
-      step_sample_batch_rngs = jax.random.split(step_sample_batch_rng,
-                                                jax.local_device_count())
-      generated_image, ema_generated_image = p_generate_batch(
-          step_sample_batch_rngs, state,
-          jax.tree_map(np.asarray, inputs))  # (1, 4, 128, 128, 3)
-      pool_val, pool_logits = self._p_get_inception(generated_image)
-      pool.append(pool_val[0])
-      logits.append(pool_logits[0])
-      ema_pool_val, ema_pool_logits = self._p_get_inception(ema_generated_image)
-      ema_pool.append(ema_pool_val[0])
-      ema_logits.append(ema_pool_logits[0])
+    
+    for iter in range (4):
+      for step in range(n_iter):
+        inputs = jax.tree_map(np.asarray, next(self.ds))  # pytype: disable=wrong-arg-types
+        
+        step_sample_batch_rng = jax.random.fold_in(rng, step)
+        step_sample_batch_rngs = jax.random.split(step_sample_batch_rng,
+                                                  jax.local_device_count())
+        generated_image, ema_generated_image = p_generate_batch(
+            step_sample_batch_rngs, state,
+            jax.tree_map(np.asarray, inputs, iter))  # (1, 4, 128, 128, 3)
+        pool_val, pool_logits = self._p_get_inception(generated_image)
+        pool.append(pool_val[0])
+        logits.append(pool_logits[0])
+        ema_pool_val, ema_pool_logits = self._p_get_inception(ema_generated_image)
+        ema_pool.append(ema_pool_val[0])
+        ema_logits.append(ema_pool_logits[0])
 
     pool_total = jnp.concatenate(pool, 1)
     pool_total = jnp.reshape(pool_total, (-1, 2048))
