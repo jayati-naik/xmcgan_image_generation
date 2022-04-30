@@ -62,8 +62,8 @@ if __name__ == '__main__':
     for sample in image_caption_list:
       filename, text_index = sample.split(',')
 
-      filenames = filename.spli('_')
-      text_indexes = text_index.spli('_')
+      filenames = filename.split('_')
+      text_indexes = text_index.split('_')
 
       num_datapoints = len(filenames)
 
