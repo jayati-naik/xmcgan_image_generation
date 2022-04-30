@@ -116,6 +116,8 @@ def replace_caption_by_index(captions):
       idx = caption_text_list.index(c)
       caption_idx.append(idx)
       count += 1
+    else:
+      print(c)
 
   return caption_idx
 
