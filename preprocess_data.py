@@ -131,7 +131,8 @@ if __name__ == '__main__':
   # Preprocess train and val data.
   coco_mini_train_dataset = set(line.strip() for line in open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/data/minicoco_train_fnames_2014.txt'))
   coco_mini_val_dataset = set(line.strip() for line in open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/data/minicoco_val_fnames_2014.txt'))
-  
+  coco_mini_val_dataset = coco_mini_val_dataset[:5]
+
   for process_split in ['validation']:
       tfds_splits = ['train']
       # COCO-2014 consists of 40k examples from these three splits.
