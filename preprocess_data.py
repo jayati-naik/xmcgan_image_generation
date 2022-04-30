@@ -24,6 +24,8 @@ import tensorflow_datasets as tfds
 import tensorflow_hub as hub
 from tqdm import tqdm
 
+import pickle
+
 _CLS_TOKEN = '[CLS]'
 _SEP_TOKEN = '[SEP]'
 
@@ -106,14 +108,16 @@ def serialize_example(ex):
 def replace_caption_by_index(captions):
   caption_idx = list()
  
-  with open('data/XMCGAN_COCO_captions.txt') as f:
-    caption_text_list = [line.strip() for line in f]
+  with open('data/minicoco_train_captions.pickle', 'rb') as f:
+    caption_text_list, _  = pickle.load()
+  
+  caption_idx = {key: val for val, key in enumerate(caption_text_list)}
 
   count = 0
   for c in captions:
     c = c.strip()
-    if c in caption_text_list:
-      idx = caption_text_list.index(c)
+    if c in caption_idx:
+      idx = caption_idx.get(c)
       caption_idx.append(idx)
       count += 1
     else:
