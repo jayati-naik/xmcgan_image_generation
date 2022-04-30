@@ -166,7 +166,7 @@ class COCODataset(base_dataset.BaseDataset):
 
     output = dict(
         image=tf.cast(image, self.data_dtype),
-        # image_aug=tf.cast(image_aug, self.data_dtype),
+        image_aug=tf.cast(image_aug, self.data_dtype),
         embedding=tf.cast(embedding[idx], self.data_dtype),
         max_len=tf.cast(max_len[idx], self.data_dtype),
         sentence_embedding=tf.cast(sentence_feat[idx], self.data_dtype),

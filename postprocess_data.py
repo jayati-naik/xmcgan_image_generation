@@ -35,7 +35,6 @@ def create_noise_files(source_dir: str='./', target_dir: str='./'):
         index[name]+=1
         z_list.append(z)
   
-  print(index)
   with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/final/XMCGAN_COCO_noise.npy', 'a') as f:
     f.write("%s,\n"%(z_list))
   
