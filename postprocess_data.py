@@ -11,9 +11,9 @@ def create_image_files(source_dir: str='./', target_dir: str='./'):
       batch_data = np.load(f'{source_dir}/{filename}')
       batch_data = batch_data.astype(np.uint8)
       for image, name in zip(batch_data, filename[:-4].split('-')[0].split('_')):
-        # l = len(int(name))
-        # prefix = 'COCO_val2014_'+''.join(map(str,np.zeroes(12-l)))
-        img_filename = f"{target_dir}/{name}-{index[name]}.png"
+        l = len(int(name))
+        prefix = 'COCO_val2014_'+''.join(map(str,np.zeroes(12-l)))
+        img_filename = f"{target_dir}/{prefix}{name}-{index[name]}.png"
         index[name]+=1
         im = Image.fromarray(image)
         im.save(img_filename)
@@ -36,7 +36,6 @@ def create_noise_files(source_dir: str='./', target_dir: str='./'):
     f.write("%s,\n"%(z_list))
   
 
-
 if __name__ == '__main__':
 
   # Output Directories
@@ -56,7 +55,7 @@ if __name__ == '__main__':
   with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/XMCGAN_COCO_batch_file.csv') as f:
     image_caption_list = [line.strip() for line in f]
   
-  with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/final/XMCGAN_COCO_filenames.npy', 'a') as f:
+  with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/final/XMCGAN_COCO_filenames.csv', 'a') as f:
     output = list()
     for sample in image_caption_list:
       filename, text_index = sample.split(',')
