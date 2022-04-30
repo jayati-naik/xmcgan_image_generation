@@ -111,6 +111,8 @@ def replace_caption_by_index(captions):
   with open('data/minicoco_train_captions.pickle', 'rb') as f:
     caption_text_list, _  = pickle.load(f)
   
+  caption_text_list  = map(lambda x: x.strip(), caption_text_list)
+  
   captionToIdx = {key: val for val, key in enumerate(caption_text_list)}
 
   count = 0
