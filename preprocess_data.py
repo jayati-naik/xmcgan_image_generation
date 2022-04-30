@@ -151,8 +151,8 @@ if __name__ == '__main__':
                       if filename[0] in coco_mini_val_dataset:
                         count += 1
                         serialized_ex = serialize_example(features)
-                          if serialized_ex:
-                            file_writer.write(serialized_ex)
+                        if serialized_ex:
+                          file_writer.write(serialized_ex)
               
               print(fil_tr_count, count)
 
