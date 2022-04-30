@@ -8,18 +8,20 @@ import random
 def create_image_files(source_dir: str='./', target_dir: str='./'):
   all_npy_files = os.listdir(source_dir)
   index = defaultdict(int)
+  count = 0
   for filename in all_npy_files:
     if filename[-4:] == '.npy':
       batch_data = np.load(f'{source_dir}/{filename}')
       batch_data = batch_data.astype(np.uint8)
       for image, name in zip(batch_data, filename[:-4].split('-')[0].split('_')):
-        l = len(name)
-        prefix = f'COCO_val2014_{"0" * (12-l)}'
+        count += 1
+        prefix = f'COCO_val2014_{"0" * (12-len(name))}'
         img_filename = f"{target_dir}{prefix}{name}-{index[name]}.png"
         index[name]+=1
         im = Image.fromarray(image)
         im.save(img_filename)
         print(f"Saved {img_filename}")
+  print(f"Total files save: {count}")
 
 
 def create_noise_files(source_dir: str='./', target_dir: str='./'):
