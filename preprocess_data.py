@@ -81,7 +81,7 @@ def serialize_example(ex):
   embedding, _, max_len = get_bert_for_captions(caption_list)
   image_data = tf.io.encode_png(ex['image'])
   filename = ex['image/filename']
-  
+   
   print(caption_index_list)
 
   context_features = {
