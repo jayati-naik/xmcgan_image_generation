@@ -82,7 +82,9 @@ def serialize_example(ex):
   image_data = tf.io.encode_png(ex['image'])
   filename = ex['image/filename']
   
-  print(caption_index_list)
+  if len(caption_index_list) != 5:
+    print(caption_list)
+    return None
 
   context_features = {
       'image':
@@ -140,11 +142,15 @@ if __name__ == '__main__':
                   if process_split == 'train':
                       if filename[0] in coco_mini_train_dataset:
                          fil_tr_count += 1
-                         file_writer.write(serialize_example(features))
+                         serialized_ex = serialize_example(features)
+                          if serialized_ex:
+                            file_writer.write(serialized_ex)
                   else:
                       if filename[0] in coco_mini_val_dataset:
                         count += 1
-                        file_writer.write(serialize_example(features))
+                        serialized_ex = serialize_example(features)
+                          if serialized_ex:
+                            file_writer.write(serialized_ex)
               
               print(fil_tr_count, count)
 
