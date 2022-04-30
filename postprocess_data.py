@@ -3,6 +3,8 @@ import os
 from collections import defaultdict
 from PIL import Image
 
+import random
+
 def create_image_files(source_dir: str='./', target_dir: str='./'):
   all_npy_files = os.listdir(source_dir)
   index = defaultdict(int)
