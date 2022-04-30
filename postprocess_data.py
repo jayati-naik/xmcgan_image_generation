@@ -11,9 +11,10 @@ def create_image_files(source_dir: str='./', target_dir: str='./'):
       batch_data = np.load(f'{source_dir}/{filename}')
       batch_data = batch_data.astype(np.uint8)
       for image, name in zip(batch_data, filename[:-4].split('-')[0].split('_')):
-        l = len(int(name))
+        l = len(name)
+        rn = random.randrange(0, 10**9, 3)
         prefix = 'COCO_val2014_'+''.join(map(str,np.zeroes(12-l)))
-        img_filename = f"{target_dir}/{prefix}{name}-{index[name]}.png"
+        img_filename = f"{target_dir}/{prefix}{name}-{index[name]}-{rn}.png"
         index[name]+=1
         im = Image.fromarray(image)
         im.save(img_filename)
