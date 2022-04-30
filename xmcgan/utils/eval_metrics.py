@@ -133,7 +133,7 @@ class EvalMetric:
         _text_index = map(str, text_index)
         _text_index = '_'.join(list(_text_index))
 
-        with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/batch_file.csv', 'a') as f:
+        with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/XMCGAN_COCO_batch_file.csv', 'a') as f:
           f.write("%s,%s\n"%(_filenames, _text_index))
 
         time_in_milis = str(round(time.time() * 1000))
