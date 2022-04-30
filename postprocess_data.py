@@ -15,7 +15,7 @@ def create_image_files(source_dir: str='./', target_dir: str='./'):
       for image, name in zip(batch_data, filename[:-4].split('-')[0].split('_')):
         l = len(name)
         prefix = f'COCO_val2014_{"0" * (12-l)}'
-        img_filename = f"{target_dir}/{prefix}{name}-{index[name]}.png"
+        img_filename = f"{target_dir}{prefix}{name}-{index[name]}.png"
         index[name]+=1
         im = Image.fromarray(image)
         im.save(img_filename)
