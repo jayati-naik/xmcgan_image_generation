@@ -192,7 +192,7 @@ class EvalMetric:
             config=self.config,
         ),
         axis_name="batch")
-    for step in range(5):
+    for step in range(n_iter):
       inputs = jax.tree_map(np.asarray, next(self.ds))  # pytype: disable=wrong-arg-types
       
       step_sample_batch_rng = jax.random.fold_in(rng, step)
