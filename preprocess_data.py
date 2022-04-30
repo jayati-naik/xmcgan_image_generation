@@ -143,10 +143,10 @@ if __name__ == '__main__':
                   filename = bytes.decode(filename.numpy()).split('.jpg')
                   if process_split == 'train':
                       if filename[0] in coco_mini_train_dataset:
-                         fil_tr_count += 1
-                         serialized_ex = serialize_example(features)
-                          if serialized_ex:
-                            file_writer.write(serialized_ex)
+                        fil_tr_count += 1
+                        serialized_ex = serialize_example(features)
+                        if serialized_ex:
+                          file_writer.write(serialized_ex)
                   else:
                       if filename[0] in coco_mini_val_dataset:
                         count += 1
