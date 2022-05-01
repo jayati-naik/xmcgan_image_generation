@@ -129,7 +129,7 @@ class EvalMetric:
 
         filenames = input["filename"]
         _filenames = map(str, filenames)
-        _filenames = map(( lambda x: f'{x}({iter})'), _filenames)
+        _filenames = map(( lambda x: f'{x}({iter[0]})'), _filenames)
         _filenames = '_'.join(list(_filenames))
 
         text_index = input['text_idx']
