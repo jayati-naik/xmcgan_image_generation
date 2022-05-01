@@ -94,8 +94,7 @@ class EvalMetric:
   def _get_generated_images(
       self, rng: np.ndarray, state: Any, batch: Dict[str, jnp.ndarray],
       generator: Union[nn.Module, functools.partial],
-      config: ml_collections.ConfigDict,
-      iter: Any) -> Tuple[jnp.ndarray, jnp.ndarray]:
+      config: ml_collections.ConfigDict) -> Tuple[jnp.ndarray, jnp.ndarray]:
     """Gets pooling/logtis features for generated images per batch.
 
     Args:
@@ -174,7 +173,6 @@ class EvalMetric:
     data['gen_img'] = generated_image
     data['ema_gen_img'] = ema_generated_image
     data['z'] = z
-    data['iter'] = iter
 
     # Call JAx_save for data tapping
     logging.info("Save Generated images")
@@ -201,13 +199,13 @@ class EvalMetric:
     for iter in range(4):
       for step in range(n_iter):
         inputs = jax.tree_map(np.asarray, next(self.ds))  # pytype: disable=wrong-arg-types
-        
+        inputs['iter'] = iter
         step_sample_batch_rng = jax.random.fold_in(rng, step)
         step_sample_batch_rngs = jax.random.split(step_sample_batch_rng,
                                                   jax.local_device_count())
         generated_image, ema_generated_image = p_generate_batch(
             step_sample_batch_rngs, state,
-            jax.tree_map(np.asarray, inputs), iter)  # (1, 4, 128, 128, 3)
+            jax.tree_map(np.asarray, inputs))  # (1, 4, 128, 128, 3)
         pool_val, pool_logits = self._p_get_inception(generated_image)
         pool.append(pool_val[0])
         logits.append(pool_logits[0])
