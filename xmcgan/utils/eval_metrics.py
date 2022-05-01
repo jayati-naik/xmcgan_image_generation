@@ -146,7 +146,7 @@ class EvalMetric:
         jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/images/normal/'+_filenames+'-'+time_in_milis, gen_imgs)
 
         jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/images/ema/ema-'+_filenames+'-'+time_in_milis, ema_gen_imgs)
-
+        print(f"Saved {_filenames}-{time_in_milis}")
       hcb.id_tap(save_to_file, data)
 
     if config.dtype == "bfloat16":
@@ -162,7 +162,8 @@ class EvalMetric:
     generated_image = None
     ema_generated_image = None
     
-    for iter in range(4):
+    for iter in range(5):
+      print(f"Iteration {iter}")
       z = jax.random.normal(
           rng, (batch["image"].shape[0], config.z_dim), dtype=dtype)
       generated_image = generator().apply(g_variables, (batch, z), mutable=False)
