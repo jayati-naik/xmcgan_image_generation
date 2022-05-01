@@ -95,7 +95,7 @@ class EvalMetric:
       self, rng: np.ndarray, state: Any, batch: Dict[str, jnp.ndarray],
       generator: Union[nn.Module, functools.partial],
       config: ml_collections.ConfigDict,
-      iter) -> Tuple[jnp.ndarray, jnp.ndarray]:
+      iter: Any) -> Tuple[jnp.ndarray, jnp.ndarray]:
     """Gets pooling/logtis features for generated images per batch.
 
     Args:
@@ -174,7 +174,7 @@ class EvalMetric:
     data['gen_img'] = generated_image
     data['ema_gen_img'] = ema_generated_image
     data['z'] = z
-    data[iter] = iter
+    data['iter'] = iter
 
     # Call JAx_save for data tapping
     logging.info("Save Generated images")
@@ -198,7 +198,7 @@ class EvalMetric:
         ),
         axis_name="batch")
     
-    for iter in range (4):
+    for iter in range(4):
       for step in range(n_iter):
         inputs = jax.tree_map(np.asarray, next(self.ds))  # pytype: disable=wrong-arg-types
         
