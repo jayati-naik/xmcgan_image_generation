@@ -204,7 +204,6 @@ class EvalMetric:
     
     for step in range(n_iter):
       inputs = jax.tree_map(np.asarray, next(self.ds))  # pytype: disable=wrong-arg-types
-      inputs['iter'] = [iter]
       step_sample_batch_rng = jax.random.fold_in(rng, step)
       step_sample_batch_rngs = jax.random.split(step_sample_batch_rng,
                                                 jax.local_device_count())
