@@ -207,7 +207,7 @@ class EvalMetric:
                                                   jax.local_device_count())
         generated_image, ema_generated_image = p_generate_batch(
             step_sample_batch_rngs, state,
-            jax.tree_map(np.asarray, inputs, iter))  # (1, 4, 128, 128, 3)
+            jax.tree_map(np.asarray, inputs), iter)  # (1, 4, 128, 128, 3)
         pool_val, pool_logits = self._p_get_inception(generated_image)
         pool.append(pool_val[0])
         logits.append(pool_logits[0])
