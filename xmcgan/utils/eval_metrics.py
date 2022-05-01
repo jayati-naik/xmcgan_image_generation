@@ -129,7 +129,7 @@ class EvalMetric:
 
         filenames = input["filename"]
         _filenames = map(str, filenames)
-        _filenames = map(( lambda x: f'{x}({iter[0]})'), _filenames)
+        _filenames = map(( lambda x: f'{x}({iter})'), _filenames)
         _filenames = '_'.join(list(_filenames))
 
         text_index = input['text_idx']
@@ -153,30 +153,36 @@ class EvalMetric:
       dtype = jnp.bfloat16
     else:
       dtype = jnp.float32
-    z = jax.random.normal(
-        rng, (batch["image"].shape[0], config.z_dim), dtype=dtype)
+    
     g_variables = {"params": state.g_optimizer.target}
     ema_g_variables = {"params": state.ema_params}
     g_variables.update(state.generator_state)
     ema_g_variables.update(state.generator_state)
 
-    generated_image = generator().apply(g_variables, (batch, z), mutable=False)
-    ema_generated_image = generator().apply(
-        ema_g_variables, (batch, z), mutable=False)
-    generated_image = jnp.asarray(generated_image, jnp.float32)
-    ema_generated_image = jnp.asarray(ema_generated_image, jnp.float32)
+    generated_image = None
+    ema_generated_image = None
+    
+    for iter in range(4):
+      z = jax.random.normal(
+          rng, (batch["image"].shape[0], config.z_dim), dtype=dtype)
+      generated_image = generator().apply(g_variables, (batch, z), mutable=False)
+      ema_generated_image = generator().apply(
+          ema_g_variables, (batch, z), mutable=False)
+      generated_image = jnp.asarray(generated_image, jnp.float32)
+      ema_generated_image = jnp.asarray(ema_generated_image, jnp.float32)
 
-    # Tmage1.0
-    # Organize data for tapping
-    data = dict()
-    data['batch'] = batch
-    data['gen_img'] = generated_image
-    data['ema_gen_img'] = ema_generated_image
-    data['z'] = z
+      # Tmage1.0
+      # Organize data for tapping
+      data = dict()
+      data['batch'] = batch
+      data['gen_img'] = generated_image
+      data['ema_gen_img'] = ema_generated_image
+      data['z'] = z
+      data['iter'] = iter
 
-    # Call JAx_save for data tapping
-    logging.info("Save Generated images")
-    save_batch_image(data)
+      # Call JAx_save for data tapping
+      logging.info("Save Generated images")
+      save_batch_image(data)
     
     return generated_image, ema_generated_image
 
@@ -196,22 +202,21 @@ class EvalMetric:
         ),
         axis_name="batch")
     
-    for iter in range(4):
-      for step in range(n_iter):
-        inputs = jax.tree_map(np.asarray, next(self.ds))  # pytype: disable=wrong-arg-types
-        inputs['iter'] = [iter]
-        step_sample_batch_rng = jax.random.fold_in(rng, step)
-        step_sample_batch_rngs = jax.random.split(step_sample_batch_rng,
-                                                  jax.local_device_count())
-        generated_image, ema_generated_image = p_generate_batch(
-            step_sample_batch_rngs, state,
-            jax.tree_map(np.asarray, inputs))  # (1, 4, 128, 128, 3)
-        pool_val, pool_logits = self._p_get_inception(generated_image)
-        pool.append(pool_val[0])
-        logits.append(pool_logits[0])
-        ema_pool_val, ema_pool_logits = self._p_get_inception(ema_generated_image)
-        ema_pool.append(ema_pool_val[0])
-        ema_logits.append(ema_pool_logits[0])
+    for step in range(n_iter):
+      inputs = jax.tree_map(np.asarray, next(self.ds))  # pytype: disable=wrong-arg-types
+      inputs['iter'] = [iter]
+      step_sample_batch_rng = jax.random.fold_in(rng, step)
+      step_sample_batch_rngs = jax.random.split(step_sample_batch_rng,
+                                                jax.local_device_count())
+      generated_image, ema_generated_image = p_generate_batch(
+          step_sample_batch_rngs, state,
+          jax.tree_map(np.asarray, inputs))  # (1, 4, 128, 128, 3)
+      pool_val, pool_logits = self._p_get_inception(generated_image)
+      pool.append(pool_val[0])
+      logits.append(pool_logits[0])
+      ema_pool_val, ema_pool_logits = self._p_get_inception(ema_generated_image)
+      ema_pool.append(ema_pool_val[0])
+      ema_logits.append(ema_pool_logits[0])
 
     pool_total = jnp.concatenate(pool, 1)
     pool_total = jnp.reshape(pool_total, (-1, 2048))
