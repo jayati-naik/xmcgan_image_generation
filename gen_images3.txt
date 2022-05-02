@@ -1,0 +1,816 @@
+/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/_src/lib/xla_bridge.py:422: UserWarning: jax.host_id has been renamed to jax.process_index. This alias will eventually be removed; please update your code.
+  "jax.host_id has been renamed to jax.process_index. This alias "
+I0501 19:10:45.758950 139788152362816 xla_bridge.py:253] Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+I0501 19:10:46.043256 139788152362816 xla_bridge.py:253] Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/_src/lib/xla_bridge.py:435: UserWarning: jax.host_count has been renamed to jax.process_count. This alias will eventually be removed; please update your code.
+  "jax.host_count has been renamed to jax.process_count. This alias "
+I0501 19:10:46.043789 139788152362816 main.py:52] JAX host: 0 / 1
+I0501 19:10:46.043877 139788152362816 main.py:53] JAX devices: [GpuDevice(id=0, process_index=0)]
+I0501 19:10:46.043981 139788152362816 local.py:45] Setting task status: host_id: 0, host_count: 1
+I0501 19:10:46.044224 139788152362816 local.py:51] Created artifact workdir of type ArtifactType.DIRECTORY and value /ifs/loni/faculty/thompson/four_d/jnaik/xmcgan/exp/train10.
+2022-05-01 19:10:47.158960: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:47.347898: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:47.555206: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:47.718687: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:47.975196: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:48.113889: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:48.185768: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:49.415747: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:49.552366: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:49.553770: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:49.875788: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:50.175434: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:50.175547: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:50.388265: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:50.637910: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:50.918460: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:51.258570: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:51.582559: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:51.868405: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:10:52.203318: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+I0501 19:10:59.673577 139788152362816 eval_metrics.py:77] Get pool for 30000 samples
+2022-05-01 19:11:10.695984: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:11.004704: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:14.431535: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.137601: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.137666: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.168846: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.170779: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.171289: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.171891: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.437834: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.443338: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.446154: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.481652: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.482052: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.483236: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.483584: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.484288: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.485049: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.486817: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.487219: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.487552: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.487700: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.490225: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.490624: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.641326: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.644273: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.647766: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.653200: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.654716: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.655274: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.655577: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.655893: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.656016: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.656424: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.657289: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.657890: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.662489: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.665143: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.666716: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.669539: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:15.921597: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:16.123727: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:16.294312: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:16.305569: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:16.305974: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:16.306290: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:16.511282: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:16.517649: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:16.518872: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:16.740884: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:16.744970: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:16.747662: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:16.749582: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:16.752125: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:17.366749: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:17.380506: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:17.380637: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:17.384779: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:17.386905: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:17.387509: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:17.390275: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:17.390753: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:17.577594: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:17.593644: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:17.598088: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:17.604903: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:17.605235: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:18.072779: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:18.675381: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:21.716688: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:22.127929: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:22.130532: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:22.130639: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:11:24.123423: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:26.487990: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:27.183958: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:27.700405: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:28.225356: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:28.879988: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:29.557416: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:30.166062: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+I0501 19:12:30.729903 139788152362816 eval_metrics.py:91] Active Evaluation Size For Real Data: 30000
+I0501 19:12:30.773622 139788152362816 train_utils.py:169] Batch size=7, image shape=(7, 128, 128, 3)
+2022-05-01 19:12:30.977667: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:31.321293: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:31.922556: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:32.435420: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:33.087046: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:33.347337: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:33.946735: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:34.598630: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:35.115330: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:35.619249: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:36.095361: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:36.624422: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:37.489687: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:38.170260: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:38.643883: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:39.229802: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:39.811255: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:40.541659: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:40.815938: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:41.518135: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:42.139952: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:42.840303: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:43.486729: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:44.151336: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:44.768229: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:45.446312: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:46.120887: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:46.726190: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:47.380597: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:48.033241: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:48.697526: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:49.189192: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:49.993105: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:50.617918: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:51.184366: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:52.025226: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:52.297587: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:52.502768: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:53.108935: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:53.733216: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:54.377823: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:55.265945: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:55.828893: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:56.350614: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:57.089421: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:57.272130: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:57.534974: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:58.114909: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:58.719166: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:12:59.551052: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:00.045379: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:00.591982: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:01.469886: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:01.472040: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:01.474559: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:02.477423: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:03.116582: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:03.928323: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:04.819733: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:05.152322: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:05.867075: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:06.593004: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:07.393523: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:08.093599: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:08.862169: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:09.611768: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:10.251449: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:10.862032: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:11.461356: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:12.176748: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:12.779923: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:13.619652: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:14.312156: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:15.031214: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:15.853676: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:16.120430: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:16.130543: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:17.295459: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:18.305931: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:18.520285: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:18.716354: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:19.523597: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:20.403161: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:21.259097: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:21.560787: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:21.741243: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:22.461288: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:23.257036: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:23.910962: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:24.454413: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:25.166335: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:25.777359: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:26.473541: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:26.744117: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:27.402885: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:28.232334: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:28.960093: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:29.683115: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:30.288962: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:30.612134: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:31.251037: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:32.024818: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:32.710384: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:33.253940: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:33.886337: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:34.605828: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:35.325834: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:36.192917: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:36.920949: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:37.576141: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:38.377911: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:39.114398: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:39.837655: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:40.698759: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:41.416194: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:41.949363: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:42.492186: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:43.480079: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:44.376875: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:44.556638: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:44.774990: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:45.397005: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:46.030585: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:47.013737: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:47.898109: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:48.477862: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:48.992348: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:49.947193: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:50.158154: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:50.376027: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:50.975314: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:51.540102: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:52.291239: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:52.936724: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:53.664555: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:54.388946: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:54.556965: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:54.745844: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:55.284976: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:56.012654: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:56.497811: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:57.129909: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:57.651015: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:58.273547: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:58.826637: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:59.402952: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:13:59.977118: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:14:00.653735: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:14:01.475495: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:14:02.058765: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:14:02.668001: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:14:03.332000: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:14:03.529536: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:14:03.724553: W external/org_tensorflow/tensorflow/stream_executor/gpu/asm_compiler.cc:111] *** WARNING *** You are using ptxas 10.0.145, which is older than 11.1. ptxas before 11.1 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You may not need to update to CUDA 11.1; cherry-picking the ptxas binary is often sufficient.
+2022-05-01 19:14:04.305030: F external/org_tensorflow/tensorflow/compiler/xla/service/gpu/nvptx_compiler.cc:456] ptxas returned an error during compilation of ptx to sass: 'INTERNAL: ptxas exited with non-zero error code 2, output: '  If the error message indicates that a file could not be written, please verify that sufficient filesystem space is provided.
+Fatal Python error: Aborted
+
+Thread 0x00007f22f72a5740 (most recent call first):
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/_src/dispatch.py", line 537 in backend_compile
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/_src/profiler.py", line 206 in wrapper
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/_src/dispatch.py", line 583 in compile_or_get_cached
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/_src/dispatch.py", line 614 in from_xla_computation
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/_src/dispatch.py", line 529 in compile
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/_src/dispatch.py", line 170 in _xla_callable_uncached
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/_src/dispatch.py", line 112 in xla_primitive_callable
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/_src/util.py", line 203 in cached
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/_src/util.py", line 210 in wrapper
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/_src/dispatch.py", line 93 in apply_primitive
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/core.py", line 611 in process_primitive
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/core.py", line 289 in bind_with_trace
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/core.py", line 286 in bind
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/jax/_src/lax/convolution.py", line 158 in conv_general_dilated
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/flax/linen/linear.py", line 278 in __call__
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/flax/linen/module.py", line 271 in wrapped_module_method
+  File "/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/xmcgan/nets/common.py", line 183 in __call__
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/flax/linen/module.py", line 271 in wrapped_module_method
+  File "/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/xmcgan/nets/xmc_net.py", line 240 in __call__
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/flax/linen/module.py", line 271 in wrapped_module_method
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/flax/linen/module.py", line 1135 in scope_fn
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/flax/core/scope.py", line 675 in wrapper
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/flax/linen/module.py", line 914 in apply
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/flax/linen/module.py", line 937 in init_with_output
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/flax/linen/module.py", line 958 in init
+  File "/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/xmcgan/train_utils.py", line 171 in create_train_state
+  File "/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/xmcgan/train_utils.py", line 513 in test
+  File "/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/xmcgan/main.py", line 64 in main
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/absl/app.py", line 251 in _run_main
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/site-packages/absl/app.py", line 303 in run
+  File "/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/xmcgan/main.py", line 70 in <module>
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/runpy.py", line 85 in _run_code
+  File "/ifshome/jnaik/anaconda3/envs/xmcgan/lib/python3.7/runpy.py", line 193 in _run_module_as_main
+test.sh: line 24: 301057 Aborted                 CUDA_VISIBLE_DEVICES="6" python -m xmcgan.main --config="$CONFIG" --mode="test" --workdir="$WORKDIR"

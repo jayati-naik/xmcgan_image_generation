@@ -139,13 +139,11 @@ class EvalMetric:
         with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/XMCGAN_COCO_batch_file.csv', 'a') as f:
           f.write("%s,%s\n"%(_filenames, _text_index))
 
-        time_in_milis = str(round(time.time() * 1000))
+        jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/noise/'+_filenames, z)
 
-        jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/noise/'+_filenames+'-'+time_in_milis, z)
+        jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/images/normal/'+_filenames, gen_imgs)
 
-        jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/images/normal/'+_filenames+'-'+time_in_milis, gen_imgs)
-
-        jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/images/ema/ema-'+_filenames+'-'+time_in_milis, ema_gen_imgs)
+        jnp.save('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/images/ema/ema-'+_filenames, ema_gen_imgs)
         print(f"Saved {_filenames}-{time_in_milis}")
       hcb.id_tap(save_to_file, data)
 
@@ -159,33 +157,30 @@ class EvalMetric:
     g_variables.update(state.generator_state)
     ema_g_variables.update(state.generator_state)
 
-    generated_image = None
-    ema_generated_image = None
-    
-    for iter in range(5):
-      print(f"Iteration {iter}")
-      z = jax.random.normal(
+    iter = 0
+    print(f"Iteration {iter}")
+    z = jax.random.normal(
           rng, (batch["image"].shape[0], config.z_dim), dtype=dtype)
-      generated_image = generator().apply(g_variables, (batch, z), mutable=False)
-      ema_generated_image = generator().apply(
+    generated_image = generator().apply(g_variables, (batch, z), mutable=False)
+    ema_generated_image = generator().apply(
           ema_g_variables, (batch, z), mutable=False)
-      generated_image = jnp.asarray(generated_image, jnp.float32)
-      ema_generated_image = jnp.asarray(ema_generated_image, jnp.float32)
+    generated_image = jnp.asarray(generated_image, jnp.float32)
+    ema_generated_image = jnp.asarray(ema_generated_image, jnp.float32)
 
-      # Tmage1.0
-      # Organize data for tapping
-      data = dict()
-      data['batch'] = batch
-      data['gen_img'] = generated_image
-      data['ema_gen_img'] = ema_generated_image
-      data['z'] = z
-      data['iter'] = iter
+    # Tmage1.0
+    # Organize data for tapping
+    data = dict()
+    data['batch'] = batch
+    data['gen_img'] = generated_image
+    data['ema_gen_img'] = ema_generated_image
+    data['z'] = z
+    data['iter'] = iter
 
-      # Call JAx_save for data tapping
-      logging.info("Save Generated images")
-      save_batch_image(data)
+    # Call JAx_save for data tapping
+    logging.info("Save Generated images")
+    save_batch_image(data)
     
-    return generated_image, ema_generated_image
+    return generated_image, ema_generated_imae
 
   def _get_generated_pool_for_evaluation(self,
                                          generator_fn: Union[nn.Module,
