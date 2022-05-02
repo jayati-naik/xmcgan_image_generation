@@ -160,18 +160,11 @@ class EvalMetric:
 
     iter = 0
     print(f"Iteration {iter}")
-    z = jax.random.normal(
-<<<<<<< HEAD
-          rng, (batch["image"].shape[0], config.z_dim), dtype=dtype)
-    generated_image = generator().apply(g_variables, (batch, z), mutable=False)
-    ema_generated_image = generator().apply(
-          ema_g_variables, (batch, z), mutable=False)
-=======
-        rng, (batch["image"].shape[0], config.z_dim), dtype=dtype)
+    z = jax.random.normal(rng, (batch["image"].shape[0], config.z_dim), dtype=dtype)
     generated_image = generator().apply(g_variables, (batch, z), mutable=False)
     ema_generated_image = generator().apply(
         ema_g_variables, (batch, z), mutable=False)
->>>>>>> 9405d075602f75ba83209ba6c89771e45e8dea97
+
     generated_image = jnp.asarray(generated_image, jnp.float32)
     ema_generated_image = jnp.asarray(ema_generated_image, jnp.float32)
 
