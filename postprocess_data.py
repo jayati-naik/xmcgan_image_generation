@@ -62,12 +62,13 @@ if __name__ == '__main__':
     output = list()
     for sample in image_caption_list:
       print(f'Sample: "{sample}"')
-      filename, text_index = sample.split(',')
+      if sample:
+        filename, text_index = sample.split(',')
 
-      filenames = filename.split('_')
-      text_indexes = text_index.split('_')
+        filenames = filename.split('_')
+        text_indexes = text_index.split('_')
 
-      num_datapoints = len(filenames)
+        num_datapoints = len(filenames)
 
       for i in range(num_datapoints):
         f.write("(%s,%s,%s)\n"%(filenames[i], text_indexes[i], 5))
