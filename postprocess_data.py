@@ -70,7 +70,7 @@ if __name__ == '__main__':
 
         num_datapoints = len(filenames)
 
-      for i in range(num_datapoints):
-        f.write("(%s,%s,%s)\n"%(filenames[i], text_indexes[i], 5))
+        for i in range(num_datapoints):
+          f.write("(%s,%s,%s)\n"%(filenames[i], text_indexes[i], 5))
 
 
