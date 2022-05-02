@@ -60,6 +60,7 @@ if __name__ == '__main__':
   
   with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/final/XMCGAN_COCO_filenames.csv', 'a') as f:
     output = list()
+    count = 0
     for sample in image_caption_list:
       print(f'Sample: "{sample}"')
       if sample:
@@ -72,5 +73,9 @@ if __name__ == '__main__':
 
         for i in range(num_datapoints):
           f.write("(%s,%s,%s)\n"%(filenames[i], text_indexes[i], 5))
+      else:
+        count += 1
+    
+    print(count)
 
 
