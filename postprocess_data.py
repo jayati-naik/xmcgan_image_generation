@@ -40,7 +40,7 @@ def create_noise_files(source_dir: str='./', target_dir: str='./'):
   
 
 if __name__ == '__main__':
-
+  '''
   # Output Directories
   source_img_dir = '/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/images/normal/'
   target_img_dir = '/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/final/images/normal/'
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
   # Split noise from batch for image to caption index
   create_noise_files(source_noise_dir, target_noise_dir)
-
+  '''
   # Read batch_file.csv file
   with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/XMCGAN_COCO_batch_file.csv') as f:
     image_caption_list = [line.strip() for line in f]
@@ -61,6 +61,7 @@ if __name__ == '__main__':
   with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/final/XMCGAN_COCO_filenames.csv', 'a') as f:
     output = list()
     for sample in image_caption_list:
+      print(sample)
       filename, text_index = sample.split(',')
 
       filenames = filename.split('_')
