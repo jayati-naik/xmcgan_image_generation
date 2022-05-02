@@ -62,7 +62,6 @@ if __name__ == '__main__':
     output = list()
     count = 0
     for sample in image_caption_list:
-      print(f'Sample: "{sample}"')
       if sample:
         filename, text_index = sample.split(',')
 
