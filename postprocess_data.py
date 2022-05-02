@@ -61,7 +61,7 @@ if __name__ == '__main__':
   with open('/ifs/loni/faculty/thompson/four_d/jnaik/xmcgan_image_generation/output/final/XMCGAN_COCO_filenames.csv', 'a') as f:
     output = list()
     for sample in image_caption_list:
-      print(sample)
+      print(f'Sample: "{sample}"')
       filename, text_index = sample.split(',')
 
       filenames = filename.split('_')
