@@ -14,4 +14,4 @@
 
 #!/bin/bash
 
-CUDA_VISIBLE_DEVICES="2,3,5,6" python -m preprocess_data.main 
+CUDA_VISIBLE_DEVICES="2,6" python -m preprocess_data 
