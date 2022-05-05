@@ -94,6 +94,11 @@ class COCODataset(base_dataset.BaseDataset):
                 tf.io.FixedLenFeature(self.embeddding_shape, tf.float32),
             "caption/max_len":
                 tf.io.VarLenFeature(tf.int64),
+            # Tmage 1.0
+            '''
+            "caption/text_idx":
+            tf.io.VarLenFeature(tf.int64),
+            '''
         }
 
         decoded_example = tf.io.parse_single_example(example, features)
@@ -105,6 +110,11 @@ class COCODataset(base_dataset.BaseDataset):
 
         decoded_example["caption/max_len"] = tf.sparse.to_dense(
             decoded_example["caption/max_len"])
+        # Tmage 1.0
+        '''
+        decoded_example["caption/text_idx"] = tf.sparse.to_dense(
+            decoded_example["caption/text_idx"])
+        '''
         decoded_example["caption/text"] = tf.sparse.to_dense(
             decoded_example["caption/text"], default_value="")
 
@@ -158,10 +168,33 @@ class COCODataset(base_dataset.BaseDataset):
             max_len=tf.cast(max_len[idx], self.data_dtype),
             sentence_embedding=tf.cast(sentence_feat[idx], self.data_dtype),
         )
+        
+        '''
+        # Tmage1.0 start
+        filenames = features["image/filename"]
+        # tf.print(filenames)
+        # filenames = tf.strings.substr(filenames, pos=13, len=12)
+        filenames = tf.strings.split(filenames, sep='COCO_train2014_')[1]
+        filenames = tf.strings.substr(filenames, pos=0, len=12)
+        filenames = tf.strings.to_number(filenames, out_type=tf.int64)
+
+        # tf.print(features["caption/text_idx"]) 
+
+        if self.return_text:
+          output["text"] = features["caption/text"][idx] 
+        if self.return_filename:
+          output["filename"] = filenames 
+        text_index = features["caption/text_idx"][idx]
+        output["text_idx"] =  tf.cast(text_index, tf.int64)
+        # Tmage1.0 end
+        '''
+        
+        # master
         if self.return_text:
             output["text"] = features["caption/text"][idx]
         if self.return_filename:
             output["filename"] = features["image/filename"]
+           
         z = tf.random.stateless_normal((self.z_dim,), rng_z, dtype=self.data_dtype)
         output.update({"z": z})
         return output
