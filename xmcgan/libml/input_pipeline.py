@@ -98,7 +98,7 @@ def create_datasets(
         batch_dims=[jax.local_device_count(), eval_batch_size_per_replica],
         num_epochs=None,
         shuffle_buffer_size=config.shuffle_buffer_size,
-        shuffle=True,  # We need random order for dataset of imagenet
+        shuffle=False,  # Tmage1.0, We need random order for dataset of imagenet
         pad_up_to_batches=eval_num_batches,
     )
     # Temporary workaround. See b/179292577.
