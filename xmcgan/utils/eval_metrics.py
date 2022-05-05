@@ -106,6 +106,45 @@ class EvalMetric:
           generated_image: [batch_size, H, W, 3] array with values in [0, 1].
           ema_generated_image: [batch_size, H, W, 3] array with values in [0, 1].
         """
+        def save_batch_image(data:jnp.ndarray):
+      def save_to_file(data, transforms):
+        input = data['batch']
+
+        # Fetch images
+        gen_imgs = data['gen_img']
+        ema_gen_imgs = data['ema_gen_img']
+        
+        # Un-normalize image data
+        gen_imgs = jnp.clip(gen_imgs * 255.0 + 0.5, 0, 255).astype(jnp.uint8)
+        ema_gen_imgs = jnp.clip(gen_imgs * 255.0 + 0.5, 0, 255).astype(jnp.uint8)
+        
+        z = jnp.asarray(data['z'])
+
+        iter = data['iter'] # Iteration in running
+        
+        # Fetch filenames from batch 
+        input = data['batch']
+
+        filenames = input["filename"]
+        _filenames = map(str, filenames)
+        _filenames = map(( lambda x: f'{x}({iter})'), _filenames)
+        _filenames = '_'.join(list(_filenames))
+
+        text_index = input['text_idx']
+        _text_index = map(str, text_index)
+        _text_index = '_'.join(list(_text_index))
+
+        with open('/scratch1/jnaik/xmcgan_image_generation/output/XMCGAN_COCO_batch_file.csv', 'a') as f:
+          f.write("%s,%s\n"%(_filenames, _text_index))
+
+        jnp.save('/scratch1/jnaik/xmcgan_image_generation/output/noise/'+_filenames, z)
+
+        jnp.save('/scratch1/jnaik/xmcgan_image_generation/output/images/normal/'+_filenames, gen_imgs)
+
+        jnp.save('/scratch1/jnaik/xmcgan_image_generation/output/images/ema/ema-'+_filenames, ema_gen_imgs)
+        print(f"Saved {_filenames}")
+
+      hcb.id_tap(save_to_file, data)
 
         if config.dtype == "bfloat16":
             dtype = jnp.bfloat16
@@ -123,6 +162,25 @@ class EvalMetric:
             ema_g_variables, (batch, z), mutable=False)
         generated_image = jnp.asarray(generated_image, jnp.float32)
         ema_generated_image = jnp.asarray(ema_generated_image, jnp.float32)
+        
+        # Tmage1.0
+        # Organize data for tapping
+        '''
+        iter = 0
+        print(f"Iteration {iter}")
+        
+        data = dict()
+        data['batch'] = batch
+        data['gen_img'] = generated_image
+        data['ema_gen_img'] = ema_generated_image
+        data['z'] = z
+        data['iter'] = iter
+
+        # Call JAx_save for data tapping
+        logging.info("Save Generated images")
+        save_batch_image(data)
+        '''
+        
         return generated_image, ema_generated_image
 
     def _get_generated_pool_for_evaluation(self,
